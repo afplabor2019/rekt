@@ -1,0 +1,25 @@
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Autó eladása</title>
+</head>
+<body>
+    <form>
+            Autó márkája:<input type="text" name="car_brand"><br>
+            Autó Típusa:<input type="text" name="car_type"><br>
+            Kilométer óra állása:<input type="number" name="car_km"><br>
+            Ár:<input type="number" name="price"><br>
+            Kép az autóról:<input type="file" name="car_pic"><br>
+    </form>
+    <button onclick="myFunction()">Autó feltöltése</button>
+    <br>
+    <p id="success"></p>
+    <script>
+        function myFunction() {
+            document.getElementById("success").innerHTML = "Sikeres feltöltés";
+        }
+    </script>
+</body>
+</html>

@@ -2,12 +2,8 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Regisztrálás</title>
 </head>
-
-<script>
-
-</script>
 
 <body>
     <form id="form1">
@@ -18,11 +14,19 @@
             Telefonszám:<input type="text" name="sellerPhoneNumber"><br>
             Cég telephelye:<input type="text" name="sellerSites"><br>
             Jelszó:<input type="password" name="sellerPassword"><br>
-            Jelszó újra:<input type="password" name="sellerPasswordAgain"><br>
-            <input type="submit" name="submit" value="Regisztrálás">
-            <input type="Button" value="Create File" onClick='WriteFile()'>
+            Jelszó újra:<input type="password" name="sellerPasswordAgain"><br>            
         </div>
     </form>
+    <br>
+    <button onclick="myFunction()">Regisztrálás</button>
+    <p id="succes"></p>
+
+    <script>
+        function myFunction() {
+            document.getElementById("succes").innerHTML = "Sikeres regisztráció";
+
+        }
+    </script>
 </body>
 
 </html>

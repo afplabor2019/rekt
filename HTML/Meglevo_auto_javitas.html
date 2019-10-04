@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meglévő autó javítása</title>
+</head>
+
+<body>
+    <form>
+        Autó márkája:<input type="text" name="car_brand"><br>
+        Autó Típusa:<input type="text" name="car_type"><br>
+        Autó hibája:<input type="text" name="car_fault"><br>
+        Kép a hibáról:<input type="file" name="car_pic"><br>
+    </form>    
+    <button onclick="myFunction()">Autó feltöltése</button>
+    <br>
+    <p id="success"></p>
+    <script>
+        function myFunction() {
+            document.getElementById("success").innerHTML = "Sikeres feltöltés";
+        }
+    </script>
+</body>
+</html>

@@ -1,26 +1,68 @@
-<html lang="en">
+<html lang="hu">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Meglévő autó javítása</title>
+    <link rel="stylesheet" href="styleSheet.css">
 </head>
 
-<body>
-    <form>
-        Autó márkája:<input type="text" name="car_brand"><br>
-        Autó Típusa:<input type="text" name="car_type"><br>
-        Autó hibája:<input type="text" name="car_fault"><br>
-        Kép a hibáról:<input type="file" name="car_pic"><br>
-    </form>    
-    <button onclick="myFunction()">Autó feltöltése</button>
-    <br>
-    <p id="success"></p>
+<body class="blueCarBG">
+    <table class="meglevoAutotableRight">
+        <tr>
+            <td> Autó márkája:</td>
+            <td><input type="text" id="brand"></td>
+        </tr>
+        <tr>
+            <td>Autó Típusa:</td>
+            <td><input type="text" id="type"></td>
+        </tr>
+        <tr>
+            <td>Autó hibája:</td>
+            <td><input type="text" id="fault"></td>
+        </tr>
+        <tr>
+            <td>Kép a hibáról:</td>
+            <td> <input type="file" id="car_pic"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button class="costumButton" onclick="upload()">Autó feltöltése</button></td>
+        </tr>
+        <tr>
+            <td id="majMessage"></td>
+        </tr>
+        <tr id="back"></tr>
+    </table>
+
     <script>
-        function myFunction() {
-            document.getElementById("success").innerHTML = "Sikeres feltöltés";
+        function upload() {
+            document.getElementById("majMessage").style.color = "#EC0C1C";
+            document.getElementById("majMessage").innerHTML = "";
+            var temp = document.getElementById("brand").value;
+            var hasError = false;
+            if (temp == null || temp == "") {
+                document.getElementById("majMessage").innerHTML += "Add meg az autó márkáját!<br />";
+                hasError = true;
+            }
+            temp = document.getElementById("type").value;
+            if (temp == null || temp == "") {
+                document.getElementById("majMessage").innerHTML += "Add meg az autó típusát!<br />";
+                hasError = true;
+            }
+            temp = document.getElementById("fault").value;
+            if (temp == null || temp == "") {
+                document.getElementById("majMessage").innerHTML += "Add meg az autó hibáját!<br />";
+                hasError = true;
+            }
+
+            if (!hasError) {
+                document.getElementById("majMessage").style.color = "#04E474";
+                document.getElementById("majMessage").innerHTML = "Autó sikeresen feltöltve!";
+                document.getElementById("back").innerHTML = '<td><a class="border" href="Vevo_Main.html">Vissza a főoldalra</a></td>';
+            }
         }
     </script>
 </body>
+
 </html>

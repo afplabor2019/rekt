@@ -114,3 +114,68 @@
     font-size: 1.5em;
     text-align: center;
 }
+
+.blueCarBG {
+    background-image: url(resources/blueCar.jpg);
+    background-size: cover;
+}
+
+.tableRight {
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+    font-family: 'Baloo', cursive;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.meglevoAutotableRight {
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+    font-family: 'Baloo', cursive;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #CCECFF;
+}
+
+#majMessage {
+    text-align: center;
+}
+
+.car_img {
+    height: 250px;
+    width: 350px;
+}
+
+#carShop_tb {
+    background-color: #C2B28F;
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+    text-decoration: none;
+}
+
+#carShop_tb td,
+th {
+    border: 2px solid #272324;
+    text-align: center;
+    font-family: 'Ultra', serif;
+    color: #272324;
+    text-decoration: none;
+}
+
+#carShop_tb a {
+    font-family: 'Ultra', serif;
+    color: #272324;
+    text-decoration: none;
+}

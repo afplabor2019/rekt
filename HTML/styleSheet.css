@@ -54,7 +54,7 @@
     font-family: 'Ultra', serif;
     font-size: 35px;
     position: absolute;
-    left: 48.4%;
+    left: 50%;
     top: 35%;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -178,4 +178,22 @@ th {
     font-family: 'Ultra', serif;
     color: #272324;
     text-decoration: none;
+}
+
+.yellowCarBG {
+    background-image: url(resources/yellowCar.jpg);
+    background-size: cover;
+}
+
+.autoEladasLeft {
+    position: absolute;
+    left: 0px;
+    width: 50%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+    font-family: 'Baloo', cursive;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #FBFFCC;
 }

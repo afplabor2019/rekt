@@ -197,3 +197,20 @@ th {
     text-align: center;
     background-color: #FBFFCC;
 }
+
+#javitandoTb {
+    position: absolute;
+    left: 0px;
+    width: 50%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+    font-family: 'Baloo', cursive;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #FBFFCC;
+}
+
+#javitjavitandoTb tr td {
+    border: 2px #272324 solid;
+}

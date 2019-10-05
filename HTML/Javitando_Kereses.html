@@ -5,98 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Javítandó autók</title>
+    <link rel="stylesheet" href="styleSheet.css">
 </head>
-<style type="text/css">
-    .tg {
-        border-collapse: collapse;
-        border-spacing: 0;
-        border-color: #93a1a1;
-        width: 100%;
-    }
-
-    .tg td {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        padding: 10px 5px;
-        border-style: solid;
-        border-width: 1px;
-        overflow: hidden;
-        word-break: normal;
-        border-color: #93a1a1;
-        color: #002b36;
-        background-color: #fdf6e3;
-        text-align: center;
-    }
-
-    .tg th {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        font-weight: normal;
-        padding: 10px 5px;
-        border-style: solid;
-        border-width: 1px;
-        overflow: hidden;
-        word-break: normal;
-        border-color: #93a1a1;
-        color: #fdf6e3;
-        background-color: #657b83;
-    }
-
-    .tg .tg-baqh {
-        text-align: center;
-        vertical-align: top
-    }
-
-    .tg .tg-7btt {
-        font-weight: bold;
-        border-color: inherit;
-        text-align: center;
-        vertical-align: top
-    }
-
-    .tg .tg-amwm {
-        font-weight: bold;
-        text-align: center;
-        vertical-align: top
-    }
-</style>
 
 <body>
 
-    <body>
-        <table class="tg">
+    <body class="yellowCarBG">
+        <table id="javitandoTb">
             <tr>
                 <th>Autó márkája</th>
                 <th>Autó típusa</th>
                 <th>Autó hibája</th>
                 <th>Kép</th>
+                <th>
+                    <Button onclick="accepted()">Rendelés felvétele</Button>
+                </th>
             </tr>
             <tr>
                 <td>Ford</td>
                 <td>Focus</td>
                 <td>Fura hangot ad ki valahol</td>
-                <td><img src="https://imgplaceholder.com/250x250"></td>
+                <td><img src="https://via.placeholder.com/250x250"></td>
+                <th>
+                    <Button onclick="accepted()">Rendelés felvétele</Button>
+                </th>
             </tr>
             <tr>
                 <td>Audi</td>
                 <td>A8</td>
                 <td>Szélvédó csere</td>
-                <td><img src="https://imgplaceholder.com/250x250"></td>
+                <td><img src="https://via.placeholder.com/250x250"></td>
+                <th>
+                    <Button onclick="accepted()">Rendelés felvétele</Button>
+                </th>
             </tr>
             <tr>
                 <td>Skoda</td>
                 <td>Octavia</td>
                 <td>Első lökhárító csere</td>
-                <td><img src="https://imgplaceholder.com/250x250"></td>
+                <td><img src="https://via.placeholder.com/250x250"></td>
+                <th>
+                    <Button onclick="accepted()">Rendelés felvétele</Button>
+                </th>
             </tr>
             <tr>
                 <td>Opel</td>
                 <td>Astra</td>
                 <td>Ablaktörlő nem működik</td>
-                <td><img src="https://imgplaceholder.com/250x250"></td>
+                <td><img src="https://via.placeholder.com/250x250"></td>
+                <th>
+                    <Button onclick="accepted()">Rendelés felvétele</Button>
+                </th>
+            </tr>
+            <tr>
+                <td id="msg"></td>
             </tr>
         </table>
     </body>
+
+    <script>
+        function accepted() {
+            document.getElementById("msg").style.color = "#04E474";
+            document.getElementById("msg").innerHTML = "Rendelés Felvéve!";
+        }
+    </script>
 </body>
 
 </html>

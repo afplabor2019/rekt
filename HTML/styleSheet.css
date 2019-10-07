@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+
+/*font-family: 'Monoton', cursive;*/
+
+@import url('https://fonts.googleapis.com/css?family=Ultra&display=swap');
+
+/*font-family: 'Ultra', serif;*/
+
+@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
+
+/*font-family: 'Baloo', cursive;*/
+
+.table_fill {
+    background-color: #C2B28F;
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+}
+
+.right,
+.left {
+    font-family: 'Baloo', cursive;
+    font-size: 2em;
+    text-align: center;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+}
+
+.border {
+    text-decoration: none;
+    color: #272324;
+    padding: 15px;
+    border: solid 5px;
+    border-color: #272324;
+}
+
+.left {
+    background-color: #E2CD6D;
+    right: 0px;
+}
+
+.right {
+    background-color: #E86F68;
+    right: 0px;
+}
+
+.floatInTheMiddle {
+    color: #272324;
+    transform-origin: center, center;
+    font-family: 'Ultra', serif;
+    font-size: 35px;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.costumButton {
+    text-decoration: none;
+    color: #272324;
+    padding: 5px;
+    border: solid 2.5px;
+    border-color: #272324;
+    background: none;
+}
+
+.tableCentered {
+    width: 100%;
+}
+
+#trTopPadding {
+    height: 75px;
+}
+
+.leftAlign {
+    text-align: left;
+}
+
+.rightAlign {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+#vevoMain {
+    background-image: url(resources/RetroCar.jpg);
+    background-size: cover;
+}
+
+.tableTop {
+    position: absolute;
+    width: 100%;
+    top: 25px;
+    font-family: 'Baloo', cursive;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.tableLeft {
+    position: absolute;
+    left: 0px;
+    width: 50%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+    font-family: 'Baloo', cursive;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.blueCarBG {
+    background-image: url(resources/blueCar.jpg);
+    background-size: cover;
+}
+
+.tableRight {
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+    font-family: 'Baloo', cursive;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.meglevoAutotableRight {
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+    font-family: 'Baloo', cursive;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #CCECFF;
+}
+
+#majMessage {
+    text-align: center;
+}
+
+.car_img {
+    height: 250px;
+    width: 350px;
+}
+
+#carShop_tb {
+    background-color: #C2B28F;
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+    text-decoration: none;
+}
+
+#carShop_tb td,
+th {
+    border: 2px solid #272324;
+    text-align: center;
+    font-family: 'Ultra', serif;
+    color: #272324;
+    text-decoration: none;
+}
+
+#carShop_tb a {
+    font-family: 'Ultra', serif;
+    color: #272324;
+    text-decoration: none;
+}
+
+.yellowCarBG {
+    background-image: url(resources/yellowCar.jpg);
+    background-size: cover;
+}
+
+.autoEladasLeft {
+    position: absolute;
+    left: 0px;
+    width: 50%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+    font-family: 'Baloo', cursive;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #FBFFCC;
+}
+
+#javitandoTb {
+    position: absolute;
+    left: 0px;
+    width: 50%;
+    top: 0px;
+    height: 100%;
+    border: 0px;
+    font-family: 'Baloo', cursive;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #FBFFCC;
+}
+
+#javitjavitandoTb tr td {
+    border: 2px #272324 solid;
+}

@@ -1,0 +1,146 @@
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eladó</title>
+    <link rel="stylesheet" href="styleSheet.css">
+</head>
+
+<body>
+    <table class="table_fill">
+        <td class="left">
+            <table class="tableCentered">
+                <tr>
+                    <td class="rightAlign">Felhasználó név:</td>
+                    <td class="leftAlign"><input type="text" name="loginName" id="loginName"></td>
+                </tr>
+                <tr>
+                    <td class="rightAlign">Jelszó:</td>
+                    <td class="leftAlign"><input type="password" name="loginPassword" id="loginPswd"></td>
+                </tr>
+                <tr id="trTopPadding">
+                    <td class="center" colspan="2"><button class="costumButton" onclick="login()">Bejelentkezés</button></td>
+                </tr>
+                <tr>
+                    <td class="center" colspan="2">
+                        <p id="LoginErrorMsg"></p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td class="right">
+            <table class="tableCentered">
+                <tr>
+                    <td class="rightAlign">Cég név:</td>
+                    <td class="leftAlign"><input type="text" name="Name" id="Name"></td>
+                </tr>
+                <tr>
+                    <td class="rightAlign">E-mail cím:</td>
+                    <td class="leftAlign"><input type="email" name="Email" id="email"></td>
+                </tr>
+                <tr>
+                    <td class="rightAlign">Telefonszám:</td>
+                    <td class="leftAlign"><input type="text" name="PhoneNumber" id="phone"></td>
+                </tr>
+                <tr>
+                    <td class="rightAlign">Cég telephelye::</td>
+                    <td class="leftAlign"><input type="text" name="sellerSites" id="sites"></td>
+                </tr>
+                <tr>
+                    <td class="rightAlign">Jelszó:</td>
+                    <td class="leftAlign"><input type="password" name="Password" id="pswd"></td>
+                </tr>
+                <tr>
+                    <td class="rightAlign">Jelszó újra:</td>
+                    <td class="leftAlign"><input type="password" name="PasswordAgain" id="pswdAgain"></td>
+                </tr>
+                <tr id="trTopPadding">
+                    <td class="center" colspan="2">
+                        <button class="costumButton" onclick="register()">Regisztráció</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center" colspan="2">
+                        <p id="ErrorMsg"></p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </table>
+    <div class="floatInTheMiddle">ELADO</div>
+
+    <script>
+        function register() {
+            document.getElementById("ErrorMsg").style.color = "#EC0C1C";
+            document.getElementById("ErrorMsg").innerHTML = "";
+            var temp = document.getElementById("Name").value;
+            var userName = "";
+            var hasError = false;
+            if (temp == null || temp == "") {
+                document.getElementById("ErrorMsg").innerHTML += "Add meg a cég nevét!<br />";
+                hasError = true;
+            } else {
+                userName = temp;
+            }
+            temp = document.getElementById("email").value;
+            if (temp == null || temp == "") {
+                document.getElementById("ErrorMsg").innerHTML += "Adj meg egy e-mail címet!<br />";
+                hasError = true;
+            }
+            temp = document.getElementById("phone").value;
+            if (temp == null || temp == "") {
+                document.getElementById("ErrorMsg").innerHTML += "Adj meg egy telefonszámot!<br />";
+                hasError = true;
+            }
+            temp = document.getElementById("sites").value;
+            if (temp == null || temp == "") {
+                document.getElementById("ErrorMsg").innerHTML += "Add meg a cég telephelyét!<br />";
+                hasError = true;
+            }
+            temp = document.getElementById("pswd").value;
+            if (temp == null || temp == "") {
+                document.getElementById("ErrorMsg").innerHTML += "Adj meg egy Jelszót!<br />";
+                hasError = true;
+            }
+            var temp2 = document.getElementById("pswdAgain").value;
+            if ((temp2 != null || temp2 != "") && temp != temp2) {
+                document.getElementById("ErrorMsg").innerHTML += "A két jelszó nem egyezik!<br />";
+                hasError = true;
+            }
+
+            if (!hasError) {
+                document.getElementById("ErrorMsg").style.color = "#04E474";
+                document.getElementById("ErrorMsg").innerHTML = "Sikeres regisztráció!";
+                document.getElementById("loginName").value = userName;
+                document.getElementById("loginPswd").value = temp;
+            }
+        }
+
+        function login() {
+            document.getElementById("LoginErrorMsg").style.color = "#EC0C1C";
+            document.getElementById("LoginErrorMsg").innerHTML = "";
+
+            var name = document.getElementById("loginName").value;
+            var pswd = document.getElementById("loginPswd").value;
+            var hasErrorLogin = false;
+
+            if (name == null || name == "") {
+                document.getElementById("LoginErrorMsg").innerHTML += "Add meg a cég nevét!</br>";
+                hasErrorLogin = true;
+            }
+
+            if (pswd == null || pswd == "") {
+                document.getElementById("LoginErrorMsg").innerHTML += "Add meg a jelszót";
+                hasErrorLogin = true;
+            }
+
+            if (!hasErrorLogin) {
+                window.location.href = "Elado_Main.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

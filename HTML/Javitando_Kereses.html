@@ -1,0 +1,74 @@
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javítandó autók</title>
+    <link rel="stylesheet" href="styleSheet.css">
+</head>
+
+<body>
+
+    <body class="yellowCarBG">
+        <table id="javitandoTb">
+            <tr>
+                <th>Autó márkája</th>
+                <th>Autó típusa</th>
+                <th>Autó hibája</th>
+                <th>Kép</th>
+                <th>
+                    <Button onclick="accepted()">Rendelés felvétele</Button>
+                </th>
+            </tr>
+            <tr>
+                <td>Ford</td>
+                <td>Focus</td>
+                <td>Fura hangot ad ki valahol</td>
+                <td><img src="https://via.placeholder.com/250x250"></td>
+                <th>
+                    <Button onclick="accepted()">Rendelés felvétele</Button>
+                </th>
+            </tr>
+            <tr>
+                <td>Audi</td>
+                <td>A8</td>
+                <td>Szélvédó csere</td>
+                <td><img src="https://via.placeholder.com/250x250"></td>
+                <th>
+                    <Button onclick="accepted()">Rendelés felvétele</Button>
+                </th>
+            </tr>
+            <tr>
+                <td>Skoda</td>
+                <td>Octavia</td>
+                <td>Első lökhárító csere</td>
+                <td><img src="https://via.placeholder.com/250x250"></td>
+                <th>
+                    <Button onclick="accepted()">Rendelés felvétele</Button>
+                </th>
+            </tr>
+            <tr>
+                <td>Opel</td>
+                <td>Astra</td>
+                <td>Ablaktörlő nem működik</td>
+                <td><img src="https://via.placeholder.com/250x250"></td>
+                <th>
+                    <Button onclick="accepted()">Rendelés felvétele</Button>
+                </th>
+            </tr>
+            <tr>
+                <td id="msg"></td>
+            </tr>
+        </table>
+    </body>
+
+    <script>
+        function accepted() {
+            document.getElementById("msg").style.color = "#04E474";
+            document.getElementById("msg").innerHTML = "Rendelés Felvéve!";
+        }
+    </script>
+</body>
+
+</html>

@@ -39,45 +39,33 @@ if (is_post()) {
 }
 ?>
 <div>
-    <table class="login">
-        <tr>
-            <td id="rightBorder">
+    <form action="<?php echo route(['page' => 'login']); ?>" method="POST">
+        <?php if (count($errors)) : ?>
+            <div class="alert alert-error">
+                <?php foreach ($errors as $error) : ?>
+                    <p><?php echo $error; ?></p>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
 
-                <form action="<?php echo route(['page' => 'login']); ?>" method="POST">
-                    <?php if (count($errors)) : ?>
-                        <div class="alert alert-error">
-                            <?php foreach ($errors as $error) : ?>
-                                <p><?php echo $error; ?></p>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endif; ?>
+        <table>
+            <tr>
+                <td colspan=2>
+                    <h1 class="text-center">Signin</h1>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td><label for="name">User name</label></td>
+                <td><input id="name" type="text" name="name" value="<?php echo isset($name) ? $name : ''; ?>"></td>
+            </tr>
+            <tr class="form-group">
+                <td><label for="password">Password</label></td>
+                <td><input id="password" type="password" name="password" value=""></td>
+            </tr>
 
-                    <table>
-                        <tr>
-                            <td colspan=2>
-                                <h1 class="text-center">Signin</h1>
-                            </td>
-                        </tr>
-                        <tr class="form-group">
-                            <td><label for="name">User name</label></td>
-                            <td><input id="name" type="text" name="name" value="<?php echo isset($name) ? $name : ''; ?>"></td>
-                        </tr>
-                        <tr class="form-group">
-                            <td><label for="password">Password</label></td>
-                            <td><input id="password" type="password" name="password" value=""></td>
-                        </tr>
-
-                        <tr>
-                            <td colspan=2><button id="signinbt" type="submit">Signin</button></td>
-                        </tr>
-                    </table>
-                </form>
-            </td>
-
-
-            <td><a id="createNewAcc" href="<?php echo route(['page' => 'register']); ?>">Create new account!</a></td>
-        </tr>
-    </table>
-
-
+            <tr>
+                <td colspan=2><button id="signinbt" type="submit">Signin</button></td>
+            </tr>
+        </table>
+    </form>
 </div>

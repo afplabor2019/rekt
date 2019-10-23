@@ -4,7 +4,7 @@
 <div>
   <table>
     <tr>
-      <td>Counter Strike: Global Offensive</td>
+      <td><a href="<?php echo route(['page' => 'csgo']); ?>">Counter Strike: Global Offensive</a></td>
       <td>League of Legends</td>
       <td>Rainbow Six: Siege</td>
     </tr>

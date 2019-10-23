@@ -24,6 +24,7 @@
           <div class="dropdown-content">
             <?php
             if (user_logged_in()) {
+              echo '<a href="' . route(['page' => 'profile']) . '">Profile</a>';
               echo '<a href="' . route(['page' => 'logout']) . '">Log out</a>';
             } else {
               echo '<a href="' . route(['page' => 'login']) . '">Log in</a>';

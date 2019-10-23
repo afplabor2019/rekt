@@ -12,6 +12,7 @@ if (is_post()) {
     $steamID = trim($_POST['steamID']);
     $ubisoftID = trim($_POST['ubisoftID']);
     $lolID = trim($_POST['lolID']);
+    $birthDay = trim($_POST['birthDay']);
 
     if ($name == null) {
         $errors['name'][] = "Name is required!";
@@ -19,6 +20,10 @@ if (is_post()) {
 
     if ($email == null) {
         $errors['email'][] = "Email is required!";
+    }
+
+    if ($birthDay == null) {
+        $errors['birthDay'][] = "Birth date required!";
     }
 
     $select = mysqli_query($db, "SELECT `email` FROM `players` WHERE `email` = '" . $_POST['email'] . "'") or exit(mysqli_error($connectionID));
@@ -43,8 +48,8 @@ if (is_post()) {
     if (count($errors) == 0) {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = $db->prepare("INSERT INTO players (email, password, name, steamID,uplayName,lolName) VALUES (?,?,?,?,?,?)");
-        $sql->bind_param("ssssss", $email, $hashedPassword, $name, $steamID, $ubisoftID, $lolID);
+        $sql = $db->prepare("INSERT INTO players (email, password, name, steamID,uplayName,lolName,birthDay) VALUES (?,?,?,?,?,?,?)");
+        $sql->bind_param("sssssss", $email, $hashedPassword, $name, $steamID, $ubisoftID, $lolID, $birthDay);
         $sql->execute();
         $sql->close();
 
@@ -71,6 +76,11 @@ if (is_post()) {
                 <td><input id="email" type="email" name="email" value="<?php echo isset($email) ? $email : ''; ?>">
                     <?php print_form_errors('email', $errors); ?>
                     <?php print_form_errors('emailRegistered', $errors); ?></td>
+            </tr>
+            <tr>
+                <td>Birth day:</td>
+                <td><input id="birthDay" type="date" name="birthDay" value="<?php echo isset($birthDay) ? $birthDay : ''; ?>">
+                    <?php print_form_errors('birthDay', $errors); ?></td>
             </tr>
             <tr>
                 <td>Password:</td>

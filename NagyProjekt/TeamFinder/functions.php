@@ -47,7 +47,7 @@ function current_user($db)
         return null;
     }
 
-    $sql = $db->prepare("SELECT * FROM users WHERE id = ?");
+    $sql = $db->prepare("SELECT * FROM players WHERE id = ?");
     $sql->bind_param('i', $_SESSION['user_id']);
     $sql->execute();
 
@@ -92,4 +92,12 @@ function print_form_errors($input, $errors)
             echo "<p class='input-error'>$error</p>";
         }
     }
+}
+
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 }

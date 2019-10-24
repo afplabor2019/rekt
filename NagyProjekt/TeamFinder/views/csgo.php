@@ -12,26 +12,43 @@ if (is_post()) {
     $lookingFor = trim('player');
     $age = trim($_POST['minAge']) . '-' . trim($_POST['maxAge']);
     $region = trim($_POST['region']);
-    $role = trim($_POST['roles']);
+    $roles = '';
     $goal = trim($_POST['goal']);
     $advertiserID = current_user($db)['id'];
     $language = trim($_POST['language']);
-    $communication = trim($_POST['communication']);
-    $teamName = trim($_POST['']);
+    $communication = "";
+    $teamName = "";
 
+    if (!empty($_POST['roles'])) {
+        foreach ($_POST['roles'] as $selected) {
+            $roles = $roles . trim($selected) . "/";
+        }
+    } else {
+        $roles = 'NaN';
+    }
+
+    if (!empty($_POST['communication'])) {
+        foreach ($_POST['communication'] as $selected) {
+            $communication = $communication . trim($selected) . "/";
+        }
+    } else {
+        $communication = 'NaN';
+    }
 
     if (isset($_POST['search'])) {
         // search
+        echo 'search';
     } else {
         // add
-        $sql = $db->prepare("INSERT INTO advertisement (game,rank,lookingFor,age,region,role,goal,advertiserID,language,communication,teamName) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-        $sql->bind_param("sssssssisss", $game, $rank, $lookingFor, $age, $region, $role, $goal, $advertiserID, $language, $communication, $teamName);
+        echo 'add';
+
+        gate();
+
+        $sql = $db->prepare("INSERT INTO advertisement (game,skillRange,lookingFor,age,region,role,goal,advertiserID,language,communication,teamName) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+        $sql->bind_param("sssssssisss", $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
         $sql->execute();
         $sql->close();
-
-        // redirect(['page' => 'csgo']);
     }
-    // route(['page' => 'csgo']);
 }
 ?>
 
@@ -42,7 +59,7 @@ if (is_post()) {
                 <tr>
                     <td>Minimum skill:</td>
                     <td>
-                        <select id="minRank">
+                        <select name="minRank" id="minRank">
                             <?php
                             $fn = fopen("Resources\csgoRanks.txt", "r");
                             $i = 0;
@@ -61,7 +78,7 @@ if (is_post()) {
                     </td>
                     <td>Maximum skill:</td>
                     <td>
-                        <select id="maxRank">
+                        <select name="maxRank" id="maxRank">
                             <?php
                             $fn = fopen("Resources\csgoRanks.txt", "r");
                             $i = 0;
@@ -82,11 +99,11 @@ if (is_post()) {
                 <tr>
                     <td>Minimum age:</td>
                     <td>
-                        <select id="minAge">
+                        <select name="minAge" id="minAge">
                             <?php
                             for ($i = 1; $i <= 100; $i++) {
                                 echo '<option value="' . $i . '" ';
-                                if ($i === 0) {
+                                if ($i === 1) {
                                     echo 'selected="selected" ';
                                 }
                                 echo '>' . $i . '</option>';
@@ -96,11 +113,11 @@ if (is_post()) {
                     </td>
                     <td>Maximum age:</td>
                     <td>
-                        <select id="maxAge">
+                        <select name="maxAge" id="maxAge">
                             <?php
                             for ($i = 1; $i <= 100; $i++) {
                                 echo '<option value="' . $i . '" ';
-                                if ($i === 0) {
+                                if ($i === 100) {
                                     echo 'selected="selected" ';
                                 }
                                 echo '>' . $i . '</option>';
@@ -114,7 +131,7 @@ if (is_post()) {
                         Region:
                     </td>
                     <td>
-                        <select id=region>
+                        <select name="region" id=region>
                             <?php
                             $fn = fopen('Resources\regions.txt', "r");
                             $i = 0;
@@ -135,7 +152,7 @@ if (is_post()) {
                         Team goal:
                     </td>
                     <td>
-                        <select id=goal>
+                        <select name="goal" id=goal>
                             <option value="any">any</option>
                             <option value="havefun">Have fun</option>
                             <option value="competitive">Play competitive</option>
@@ -150,7 +167,7 @@ if (is_post()) {
                 <tr>
                     <td>Language:</td>
                     <td>
-                        <select id=language>
+                        <select name="language" id=language>
                             <?php
                             $fn = fopen('Resources\languages.txt', "r");
                             while (!feof($fn)) {

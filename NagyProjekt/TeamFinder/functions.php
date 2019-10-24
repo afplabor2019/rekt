@@ -94,10 +94,25 @@ function print_form_errors($input, $errors)
     }
 }
 
-function debug_to_console($data) {
+function debug_to_console($data)
+{
     $output = $data;
     if (is_array($output))
         $output = implode(',', $output);
 
     echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
+
+function current_url()
+{
+    $http = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http");
+    return "{$http}://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+}
+
+function gate()
+{
+    if (!user_logged_in()) {
+        $_SESSION['intended'] = current_url();
+        redirect(['page' => 'login']);
+    }
 }

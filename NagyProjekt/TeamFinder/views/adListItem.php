@@ -18,9 +18,11 @@ $user = getUserById($db, $ad['advertiserID']);
                         <td><?php
                             echo $user['name'];
                             ?></td>
-                        <td><?php
+                        <td>
+                            <?php
                             echo '<img src="' . $gameIcons[$ad['game']] . '" alt="Counter Strike: Global Offensive" id="gameIcon">';
-                            ?></td>
+                            ?>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -76,6 +78,13 @@ $user = getUserById($db, $ad['advertiserID']);
             </td>
             <td>
                 <table border="1px solid">
+                    <tr>
+                        <td colspan="2">
+                            <a href="<?php echo route(['page' => 'messages']); ?>">
+                                <img src="Resources\envelope.svg" alt="messages" class="headerIcon">
+                            </a>
+                        </td>
+                    </tr>
                     <tr>
                         <td>Communication:</td>
                         <td>

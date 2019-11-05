@@ -20,7 +20,7 @@
       <li><a href="<?php echo route(); ?>">Home</a></li>
       <li style="float:right">
         <div class="dropdown" style="float:right;">
-          <img src="Resources\user-solid.svg" alt="User" class="profileIcon">
+          <img src="Resources\man-user.svg" alt="User" class="headerIcon">
           <div class="dropdown-content">
             <?php
             if (user_logged_in()) {
@@ -33,6 +33,11 @@
             ?>
           </div>
         </div>
+      </li>
+      <li style="float:right">
+        <a href="<?php echo route(['page' => 'messages']);?>">
+          <img src="Resources\envelope.svg" alt="messages" class="headerIcon">
+        </a>
       </li>
     </ul>
   </header>

@@ -4,7 +4,6 @@
 
 <?php
 $search = false;
-
 if (is_post()) {
     $game = trim('csgo');
     $rank = trim($_POST['minRank']) . '-' . trim($_POST['maxRank']);
@@ -17,7 +16,6 @@ if (is_post()) {
     $language = trim($_POST['language']);
     $communication = "";
     $teamName = "";
-
     if (!empty($_POST['roles'])) {
         foreach ($_POST['roles'] as $selected) {
             $roles = $roles . trim($selected) . "/";
@@ -25,7 +23,6 @@ if (is_post()) {
     } else {
         $roles = 'NaN';
     }
-
     if (!empty($_POST['communication'])) {
         foreach ($_POST['communication'] as $selected) {
             $communication = $communication . trim($selected) . "/";
@@ -33,7 +30,6 @@ if (is_post()) {
     } else {
         $communication = 'NaN';
     }
-
     if (isset($_POST['search'])) {
         // search       
         $search = true;

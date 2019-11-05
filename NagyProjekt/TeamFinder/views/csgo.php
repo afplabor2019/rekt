@@ -4,7 +4,6 @@
 
 <?php
 $search = false;
-$result;
 
 if (is_post()) {
     $game = trim('csgo');
@@ -36,30 +35,15 @@ if (is_post()) {
     }
 
     if (isset($_POST['search'])) {
-        // search
-
-        $query = $db->prepare("SELECT * from advertisement where 
-        game=? and
-        skillRange=? and
-        lookingFor=? and
-        age=? and
-        region=? and
-        role=? and
-        goal=? and
-        advertiserID=? and
-        language=? and
-        communication=? and
-        teamName=?");
-        $query->bind_param("sssssssisss", $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
-        $query->execute();
-        $result = $query->get_result();
-        $query->close();
+        // search       
         $search = true;
     } else if (isset($_POST['add'])) {
         // add
-        $search=true;
+        $search = true;
         gate();
         addAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
+    } else if (isset($_POST['showAll'])) {
+        $search = false;
     }
 }
 ?>
@@ -232,15 +216,15 @@ if (is_post()) {
         </div>
         <input type="submit" name="search" value="Search" />
         <input type="submit" name="add" value="Add" />
+        <input type="submit" name="*" value="Show All Ad" />
     </form>
 </div>
 
 <div>
     <?php
     if ($search) {
-        
-    }
-    else{
+        $result = searchAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
+    } else {
         $result = getAllAd($db);
     }
     while ($ad = mysqli_fetch_array($result)) {

@@ -144,22 +144,7 @@ function getCsGoUserStats($steamId)
 
 function addAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName)
 {
-    $query = $db->prepare("SELECT * from advertisement where 
-    game=? and
-    skillRange=? and
-    lookingFor=? and
-    age=? and
-    region=? and
-    role=? and
-    goal=? and
-    advertiserID=? and
-    language=? and
-    communication=? and
-    teamName=?");
-    $query->bind_param("sssssssisss", $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
-    $query->execute();
-    $result = $query->get_result();
-    $query->close();
+    $result = searchAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
 
     $resultCount = 0;
     foreach ($result as $ad) {
@@ -179,4 +164,25 @@ function addAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $ad
         $sql->close();
         return true;
     }
+}
+
+function searchAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName)
+{
+    $query = $db->prepare("SELECT * from advertisement where 
+    game=? and
+    skillRange=? and
+    lookingFor=? and
+    age=? and
+    region=? and
+    role=? and
+    goal=? and
+    advertiserID=? and
+    language=? and
+    communication=? and
+    teamName=?");
+    $query->bind_param("sssssssisss", $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
+    $query->execute();
+    $result = $query->get_result();
+    $query->close();
+    return $result;
 }

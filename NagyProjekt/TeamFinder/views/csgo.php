@@ -3,10 +3,7 @@
 } ?>
 
 <?php
-
-debug_to_console("sa");
 if (is_post()) {
-    debug_to_console("asd");
     $game = trim('csgo');
     $rank = trim($_POST['minRank']) . '-' . trim($_POST['maxRank']);
     $lookingFor = trim('player');
@@ -38,16 +35,45 @@ if (is_post()) {
     if (isset($_POST['search'])) {
         // search
         echo 'search';
-    } else {
+    } else if (isset($_POST['add'])) {
         // add
         echo 'add';
 
         gate();
 
-        $sql = $db->prepare("INSERT INTO advertisement (game,skillRange,lookingFor,age,region,role,goal,advertiserID,language,communication,teamName) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-        $sql->bind_param("sssssssisss", $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
-        $sql->execute();
-        $sql->close();
+        $query = $db->prepare("SELECT * from advertisement where 
+        game=? and
+        skillRange=? and
+        lookingFor=? and
+        age=? and
+        region=? and
+        role=? and
+        goal=? and
+        advertiserID=? and
+        language=? and
+        communication=? and
+        teamName=?");
+        $query->bind_param("sssssssisss", $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
+        $query->execute();
+        $result = $query->get_result();
+        $query->close();
+
+        $resultCount = 0;
+        foreach ($result as $ad) {
+            $resultCount++;
+        }
+        debug_to_console($resultCount);
+
+        if ($resultCount != 0) {
+            //row added
+            debug_to_console("This ad already exists");
+        } else {
+            //add row
+            $sql = $db->prepare("INSERT INTO advertisement (game,skillRange,lookingFor,age,region,role,goal,advertiserID,language,communication,teamName) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+            $sql->bind_param("sssssssisss", $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
+            $sql->execute();
+            $sql->close();
+        }
     }
 }
 ?>
@@ -221,4 +247,14 @@ if (is_post()) {
         <input type="submit" name="search" value="Search" />
         <input type="submit" name="add" value="Add" />
     </form>
+</div>
+
+<div>
+    <?php
+    // $sql = "SELECT * FROM series ORDER BY title LIMIT $thisPageRes,$resPerPage";
+    $result = getAllAd($db);
+    while ($ad = mysqli_fetch_array($result)) {
+        include('adListItem.php');
+    }
+    ?>
 </div>

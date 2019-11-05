@@ -100,7 +100,8 @@ function debug_to_console($data)
     if (is_array($output))
         $output = implode(',', $output);
 
-    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+    echo '<script>console.log("' . $output . '" );</script>';
+    // echo 'console.log("' . $output . '" );';
 }
 
 function current_url()
@@ -115,4 +116,12 @@ function gate()
         $_SESSION['intended'] = current_url();
         redirect(['page' => 'login']);
     }
+}
+
+function getAllAd($db)
+{
+    $sql = $db->prepare("SELECT * FROM advertisement ORDER BY id");
+    $sql->execute();
+    $result = $sql->get_result();
+    return $result;
 }

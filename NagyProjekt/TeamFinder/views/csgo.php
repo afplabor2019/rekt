@@ -4,6 +4,7 @@
 
 <?php
 $search = false;
+$teams = false;
 if (is_post()) {
     $game = trim('csgo');
     $rank = trim($_POST['minRank']) . '-' . trim($_POST['maxRank']);
@@ -15,7 +16,8 @@ if (is_post()) {
     $advertiserID = current_user($db)['id'];
     $language = trim($_POST['language']);
     $communication = "";
-    $teamName = "";
+    $teamName = array_key_exists('teamName', $_POST) ? trim($_POST['teamName']) : '';
+
     if (!empty($_POST['roles'])) {
         foreach ($_POST['roles'] as $selected) {
             $roles = $roles . trim($selected) . "/";
@@ -40,6 +42,10 @@ if (is_post()) {
         addAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
     } else if (isset($_POST['showAll'])) {
         $search = false;
+    } else if (isset($_POST['player'])) {
+        $teams = false;
+    } else if (isset($_POST['teams'])) {
+        $teams = true;
     }
 }
 ?>
@@ -48,6 +54,10 @@ if (is_post()) {
     <form action="<?php echo route(['page' => 'csgo']); ?>" method="POST" enctype="multipart/form-data">
         <div class="label">
             <Table>
+                <tr>
+                    <td><input type="submit" name="player" value="Players" /></td>
+                    <td><input type="submit" name="teams" value="Teams" /></td>
+                </tr>
                 <tr>
                     <td>Minimum skill:</td>
                     <td>
@@ -170,7 +180,12 @@ if (is_post()) {
                             ?>
                         </select>
                     </td>
-                    </td>
+                    <?php
+                    if ($teams) {
+                        echo '<td>Team name:</td>';
+                        echo '<td><input id="teamName" type="text" name="teamName"></td>';
+                    }
+                    ?>
                 </tr>
                 <tr>
                     <td>Communication:</td>

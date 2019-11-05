@@ -141,3 +141,42 @@ function getCsGoUserStats($steamId)
     $json = json_decode(strval($xml), true);
     return $json;
 }
+
+function addAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName)
+{
+    $query = $db->prepare("SELECT * from advertisement where 
+    game=? and
+    skillRange=? and
+    lookingFor=? and
+    age=? and
+    region=? and
+    role=? and
+    goal=? and
+    advertiserID=? and
+    language=? and
+    communication=? and
+    teamName=?");
+    $query->bind_param("sssssssisss", $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
+    $query->execute();
+    $result = $query->get_result();
+    $query->close();
+
+    $resultCount = 0;
+    foreach ($result as $ad) {
+        $resultCount++;
+    }
+    debug_to_console($resultCount);
+
+    if ($resultCount != 0) {
+        //row added
+        debug_to_console("This ad already exists");
+        return false;
+    } else {
+        //add row
+        $sql = $db->prepare("INSERT INTO advertisement (game,skillRange,lookingFor,age,region,role,goal,advertiserID,language,communication,teamName) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+        $sql->bind_param("sssssssisss", $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
+        $sql->execute();
+        $sql->close();
+        return true;
+    }
+}

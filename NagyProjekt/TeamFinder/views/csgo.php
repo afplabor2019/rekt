@@ -3,6 +3,9 @@
 } ?>
 
 <?php
+$search = false;
+$result;
+
 if (is_post()) {
     $game = trim('csgo');
     $rank = trim($_POST['minRank']) . '-' . trim($_POST['maxRank']);
@@ -34,12 +37,6 @@ if (is_post()) {
 
     if (isset($_POST['search'])) {
         // search
-        echo 'search';
-    } else if (isset($_POST['add'])) {
-        // add
-        echo 'add';
-
-        gate();
 
         $query = $db->prepare("SELECT * from advertisement where 
         game=? and
@@ -57,23 +54,12 @@ if (is_post()) {
         $query->execute();
         $result = $query->get_result();
         $query->close();
-
-        $resultCount = 0;
-        foreach ($result as $ad) {
-            $resultCount++;
-        }
-        debug_to_console($resultCount);
-
-        if ($resultCount != 0) {
-            //row added
-            debug_to_console("This ad already exists");
-        } else {
-            //add row
-            $sql = $db->prepare("INSERT INTO advertisement (game,skillRange,lookingFor,age,region,role,goal,advertiserID,language,communication,teamName) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-            $sql->bind_param("sssssssisss", $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
-            $sql->execute();
-            $sql->close();
-        }
+        $search = true;
+    } else if (isset($_POST['add'])) {
+        // add
+        $search=true;
+        gate();
+        addAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
     }
 }
 ?>
@@ -251,8 +237,12 @@ if (is_post()) {
 
 <div>
     <?php
-    // $sql = "SELECT * FROM series ORDER BY title LIMIT $thisPageRes,$resPerPage";
-    $result = getAllAd($db);
+    if ($search) {
+        
+    }
+    else{
+        $result = getAllAd($db);
+    }
     while ($ad = mysqli_fetch_array($result)) {
         include('adListItem.php');
     }

@@ -125,3 +125,19 @@ function getAllAd($db)
     $result = $sql->get_result();
     return $result;
 }
+
+function getUserById($db, $id)
+{
+    $sql = $db->prepare("SELECT * FROM players WHERE id=$id");
+    $sql->execute();
+    $result = $sql->get_result();
+    return $result->fetch_assoc();
+}
+
+function getCsGoUserStats($steamId)
+{
+    $url = "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=" . CSGOID . "&key=" . STEAMAPIKEY . "&" . $steamId;
+    $xml = file_get_contents($url);
+    $json = json_decode(strval($xml), true);
+    return $json;
+}

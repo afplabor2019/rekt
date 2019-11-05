@@ -209,13 +209,13 @@ if (is_post()) {
                 <tr>
                     <td>Communication:</td>
                     <td>
-                        <input type="checkbox" name="communication[]" value="dc"> Discord
+                        <input type="checkbox" name="communication[]" value="discord"> Discord
                     </td>
                     <td>
-                        <input type="checkbox" name="communication[]" value="ts"> Team speak
+                        <input type="checkbox" name="communication[]" value="teamspeak"> Team speak
                     </td>
                     <td>
-                        <input type="checkbox" name="communication[]" value="ig"> Ingame
+                        <input type="checkbox" name="communication[]" value="ingame"> Ingame
                     </td>
                 </tr>
             </table>

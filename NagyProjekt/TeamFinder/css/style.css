@@ -41,3 +41,11 @@
     height: 25px;
     width: 25px;
 }
+
+.msgLeft{
+    float: left;
+}
+
+.msgRight{
+    float: right;
+}

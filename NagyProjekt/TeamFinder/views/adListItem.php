@@ -95,7 +95,7 @@ $user = getUserById($db, $ad['advertiserID']);
                 <table border="1px solid">
                     <tr>
                         <td colspan="2">
-                            <a href="<?php echo route(['page' => 'messages']); ?>">
+                            <a href="<?php redirectToMessages($user['id']) ?>">
                                 <img src="Resources\envelope.svg" alt="messages" class="headerIcon">
                             </a>
                         </td>

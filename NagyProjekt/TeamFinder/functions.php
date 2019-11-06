@@ -179,11 +179,56 @@ function searchAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, 
     return $result;
 }
 
-function getAllAdByGame($db,$game)
+function getAllAdByGame($db, $game)
 {
     $sql = $db->prepare("SELECT * FROM advertisement WHERE game=? ORDER BY id");
-    $sql->bind_param("s",$game);
+    $sql->bind_param("s", $game);
     $sql->execute();
     $result = $sql->get_result();
     return $result;
+}
+
+function redirectToMessages($toId)
+{
+    $_SESSION['toId'] = $toId;
+    $_SESSION['sendTo'] = true;
+    echo route(['page' => 'messages']);
+}
+
+function getAllMessagesForUser($db, $userID)
+{
+    $sql = $db->prepare("SELECT * FROM messages WHERE fromId=? OR toId=? ORDER BY sendTime");
+    $sql->bind_param("ii", $userID, $userID);
+    $sql->execute();
+    $result = $sql->get_result();
+    return $result;
+}
+
+function getAllMessageBetweenTwoUser($db, $user1, $user2)
+{
+    $sql = $db->prepare("SELECT * FROM messages WHERE (fromId=? OR toId=?) AND (fromId=? OR toId=?) ORDER BY sendTime");
+    $sql->bind_param("iiii", $user1, $user1, $user2, $user2);
+    $sql->execute();
+    $result = $sql->get_result();
+    return $result;
+}
+
+function getAllMessageContactForUser($db, $userId)
+{
+    //SELECT * FROM messages GROUP BY toID HAVING fromId=11 OR toId=11 ORDER BY sendTime
+    $sql = $db->prepare("SELECT fromId, toID FROM messages GROUP BY toID HAVING fromId=? OR toId=? ORDER BY sendTime");
+    $sql->bind_param("ii", $userId, $userId);
+    $sql->execute();
+    $result = $sql->get_result();
+    return $result;
+}
+
+function sendMessage($db, $fromId, $toID, $text)
+{
+    $sql = $db->prepare("INSERT INTO messages (fromId, toID, text) VALUES (?,?,?)");
+    $sql->bind_param("iis", $fromId, $toID, $text);
+    $sql->execute();
+    $errors = mysqli_error_list($db);
+    $sql->close();
+    return $errors;
 }

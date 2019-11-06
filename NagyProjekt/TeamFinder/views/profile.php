@@ -19,15 +19,4 @@ $user = current_user($db);
         <td><?php echo $user['email'] ?></td>
     </tr>
     <tr>
-        <td>Steam ID:</td>
-        <td><?php echo $user['steamID'] ?></td>
-    </tr>
-    <tr>
-        <td>Ubisoft name:</td>
-        <td><?php echo $user['uplayName'] ?></td>
-    </tr>
-    <tr>
-        <td>LOL name:</td>
-        <td><?php echo $user['lolName'] ?></td>
-    </tr>
 </table>

@@ -10,7 +10,6 @@ if (is_post()) {
     $password = trim($_POST['password']);
     $passwordAgain = trim($_POST['passwordAgain']);
     $birthDay = trim($_POST['birthDay']);
-
     if ($name == null) {
         $errors['name'][] = "Name is required!";
     }
@@ -76,7 +75,7 @@ if (is_post()) {
             </tr>
             <tr>
                 <td>Birth day:</td>
-                <td><input id="birthDay" type="date" name="birthDay" value="<?php echo isset($birthDay) ? $birthDay : ''; ?>">
+                <td><input id="birthDay" type="date" name="birthDay" min='1900-01-01' max='2019-12-31' value="<?php echo isset($birthDay) ? $birthDay : ''; ?>">
                     <?php print_form_errors('birthDay', $errors); ?></td>
             </tr>
             <tr>
@@ -97,3 +96,19 @@ if (is_post()) {
         </table>
     </form>
 </div>
+
+<script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("birthDay").setAttribute("max", today);
+</script>

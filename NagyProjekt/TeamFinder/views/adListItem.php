@@ -139,7 +139,18 @@ $user = getUserById($db, $ad['advertiserID']);
                                 ?>
                             </ul>
                         </td>
-                    </tr>                   
+                    </tr>
+                    <tr>
+                        <td colspan="2">                            
+                            <?php
+                           echo $user['name']."'s age:";
+                           $date = new DateTime($user['birthDay']);
+                           $now = new DateTime();
+                           $interval = $now->diff($date);
+                           echo $interval->y;
+                            ?>
+                        </td>
+                    </tr>
                 </table>
             </td>
         </tr>

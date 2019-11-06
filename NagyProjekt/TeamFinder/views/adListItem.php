@@ -20,7 +20,7 @@ $user = getUserById($db, $ad['advertiserID']);
                             ?></td>
                         <td>
                             <?php
-                            echo '<img src="' . $gameIcons[$ad['game']] . '" alt="Counter Strike: Global Offensive" id="gameIcon">';
+                            echo '<img src="' . $gameIcons[$ad['game']] . '"'.$ad['game'].'" id="gameIcon">';
                             ?>
                         </td>
                     </tr>
@@ -40,6 +40,7 @@ $user = getUserById($db, $ad['advertiserID']);
                             echo '<img src="' . $lolRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" class="rankIcon">';
                             break;
                             case 'r6s':
+                            debug_to_console(strval($r6sRanksPics[$ranks[0]]));
                             echo '<img src="' . $r6sRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" class="rankIcon">';
                             echo '-';
                             echo '<img src="' . $r6sRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" class="rankIcon">';

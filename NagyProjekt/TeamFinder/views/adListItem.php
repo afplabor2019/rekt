@@ -28,10 +28,24 @@ $user = getUserById($db, $ad['advertiserID']);
                         <td colspan="2">
                             <?php
                             $ranks = explode('-', $ad['skillRange']);
+                            switch ($ad['game']){
+                            case 'csgo':
                             echo '<img src="' . $csgoRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" class="rankIcon">';
                             echo '-';
                             echo '<img src="' . $csgoRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" class="rankIcon">';
-                            ?>
+                            break;
+                            case 'lol':
+                            echo '<img src="' . $lolRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" class="rankIcon">';
+                            echo '-';
+                            echo '<img src="' . $lolRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" class="rankIcon">';
+                            break;
+                            case 'r6s':
+                            echo '<img src="' . $r6sRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" class="rankIcon">';
+                            echo '-';
+                            echo '<img src="' . $r6sRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" class="rankIcon">';
+                            break;
+                             }
+                              ?>
                         </td>
                     </tr>
                     <tr>

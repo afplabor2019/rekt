@@ -186,3 +186,12 @@ function searchAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, 
     $query->close();
     return $result;
 }
+
+function getAllAdByGame($db,$game)
+{
+    $sql = $db->prepare("SELECT * FROM advertisement WHERE game=? ORDER BY id");
+    $sql->bind_param("s",$game);
+    $sql->execute();
+    $result = $sql->get_result();
+    return $result;
+}

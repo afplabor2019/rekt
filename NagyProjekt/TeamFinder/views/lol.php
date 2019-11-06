@@ -6,7 +6,7 @@
 $search = false;
 $teams = false;
 if (is_post()) {
-    $game = trim('csgo');
+    $game = trim('lol');
     $rank = trim($_POST['minRank']) . '-' . trim($_POST['maxRank']);
     $lookingFor = trim('player');
     $age = trim($_POST['minAge']) . '-' . trim($_POST['maxAge']);
@@ -51,7 +51,7 @@ if (is_post()) {
 ?>
 
 <div class="label">
-    <form action="<?php echo route(['page' => 'csgo']); ?>" method="POST" enctype="multipart/form-data">
+    <form action="<?php echo route(['page' => 'lol']); ?>" method="POST" enctype="multipart/form-data">
         <div class="label">
             <Table>
                 <tr>
@@ -63,7 +63,7 @@ if (is_post()) {
                     <td>
                         <select name="minRank" id="minRank">
                             <?php
-                            $fn = fopen("Resources\csgoRanks.txt", "r");
+                            $fn = fopen("Resources\lolRanks.txt", "r");
                             $i = 0;
                             while (!feof($fn)) {
                                 $result = fgets($fn);
@@ -82,7 +82,7 @@ if (is_post()) {
                     <td>
                         <select name="maxRank" id="maxRank">
                             <?php
-                            $fn = fopen("Resources\csgoRanks.txt", "r");
+                            $fn = fopen("Resources\lolRanks.txt", "r");
                             $i = 0;
                             while (!feof($fn)) {
                                 $result = fgets($fn);
@@ -236,7 +236,7 @@ if (is_post()) {
     if ($search) {
         $result = searchAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
     } else {
-        $result = getAllAdByGame($db,"csgo");
+        $result = getAllAdByGame($db,"lol");
     }
     while ($ad = mysqli_fetch_array($result)) {
         include('adListItem.php');

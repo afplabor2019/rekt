@@ -20,7 +20,7 @@ $user = getUserById($db, $ad['advertiserID']);
                             ?></td>
                         <td>
                             <?php
-                            echo '<img src="' . $gameIcons[$ad['game']] . '"'.$ad['game'].'" id="gameIcon">';
+                            echo '<img src="' . $gameIcons[$ad['game']] . '"'.$ad['game'].'" title="'.$ad['game'].'" id="gameIcon">';
                             ?>
                         </td>
                     </tr>
@@ -30,20 +30,20 @@ $user = getUserById($db, $ad['advertiserID']);
                             $ranks = explode('-', $ad['skillRange']);
                             switch ($ad['game']){
                             case 'csgo':
-                            echo '<img src="' . $csgoRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" class="rankIcon">';
+                            echo '<img src="' . $csgoRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" title="'.$ranks[0].' " class="rankIcon">';
                             echo '-';
-                            echo '<img src="' . $csgoRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" class="rankIcon">';
+                            echo '<img src="' . $csgoRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" title="'.$ranks[1].' "  class="rankIcon">';
                             break;
                             case 'lol':
-                            echo '<img src="' . $lolRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" class="rankIcon">';
+                            echo '<img src="' . $lolRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" title="'.$ranks[0].'" class="rankIcon">';
                             echo '-';
-                            echo '<img src="' . $lolRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" class="rankIcon">';
+                            echo '<img src="' . $lolRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" title="'.$ranks[1].'" class="rankIcon">';
                             break;
                             case 'r6s':
                             debug_to_console(strval($r6sRanksPics[$ranks[0]]));
-                            echo '<img src="' . $r6sRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" class="rankIcon">';
+                            echo '<img src="' . $r6sRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" title="'.$ranks[0].'" class="rankIcon">';
                             echo '-';
-                            echo '<img src="' . $r6sRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" class="rankIcon">';
+                            echo '<img src="' . $r6sRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" title="'.$ranks[1].'" class="rankIcon">';
                             break;
                              }
                               ?>

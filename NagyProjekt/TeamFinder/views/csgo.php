@@ -236,10 +236,14 @@ if (is_post()) {
     if ($search) {
         $result = searchAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);
     } else {
-        $result = getAllAdByGame($db,"csgo");
+        $result = getAllAdByGame($db, "csgo");
     }
-    while ($ad = mysqli_fetch_array($result)) {
-        include('adListItem.php');
+    if (mysqli_num_rows($result) > 0) {
+        while ($ad = mysqli_fetch_array($result)) {
+            include('adListItem.php');
+        }
+    } else {
+        echo '<div>No ad found!</div>';
     }
     ?>
 </div>

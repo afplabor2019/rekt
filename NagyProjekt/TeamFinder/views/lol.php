@@ -238,8 +238,12 @@ if (is_post()) {
     } else {
         $result = getAllAdByGame($db,"lol");
     }
-    while ($ad = mysqli_fetch_array($result)) {
-        include('adListItem.php');
+    if (mysqli_num_rows($result) > 0) {
+        while ($ad = mysqli_fetch_array($result)) {
+            include('adListItem.php');
+        }
+    } else {
+        echo '<div>No ad found!</div>';
     }
     ?>
 </div>

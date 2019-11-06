@@ -71,6 +71,15 @@ $r6sRanksPics = array(
     "Diamond" => "ranks_pictures\gold_6.png",
 );
 
+$connection = mysqli_connect('localhost', 'root', '');
+if (!mysqli_select_db($connection, 'teamfinder')) {
+    echo '<script>    
+      alert("Database not found please run the installer from Database_Installer\TeamFinderInstaller.exe  !");
+    </script>';
+    die();
+}
+
+
 $db = dbConnect();
 
 include "./views/header.php";

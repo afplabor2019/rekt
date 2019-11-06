@@ -139,22 +139,7 @@ $user = getUserById($db, $ad['advertiserID']);
                                 ?>
                             </ul>
                         </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            K/D:
-                            <?php
-                            if (array_key_exists('steamID', $user)) {
-                                echo 'Not found!';
-                            } else {
-                                $json = getCsGoUserStats($user['steamid']);
-                                $kd = intval($json['playerstats']['stats'][0]['value']) / intval($json['playerstats']['stats'][1]['value']);
-                                echo number_format((float) $kd, 2, '.', '');
-                            }
-
-                            ?>
-                        </td>
-                    </tr>
+                    </tr>                   
                 </table>
             </td>
         </tr>

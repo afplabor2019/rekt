@@ -134,14 +134,6 @@ function getUserById($db, $id)
     return $result->fetch_assoc();
 }
 
-function getCsGoUserStats($steamId)
-{
-    $url = "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=" . CSGOID . "&key=" . STEAMAPIKEY . "&" . $steamId;
-    $xml = file_get_contents($url);
-    $json = json_decode(strval($xml), true);
-    return $json;
-}
-
 function addAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName)
 {
     $result = searchAd($db, $game, $rank, $lookingFor, $age, $region, $roles, $goal, $advertiserID, $language, $communication, $teamName);

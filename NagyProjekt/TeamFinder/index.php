@@ -1,8 +1,6 @@
 <?php
 session_start();
 define('APP_VERSION', '1.0.0');
-define('STEAMAPIKEY', '36E49C6A15F3B3C47FE30B893F413C1D');
-define('CSGOID', '730');
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 

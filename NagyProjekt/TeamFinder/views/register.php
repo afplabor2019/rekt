@@ -9,9 +9,6 @@ if (is_post()) {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
     $passwordAgain = trim($_POST['passwordAgain']);
-    $steamID = trim($_POST['steamID']);
-    $ubisoftID = trim($_POST['ubisoftID']);
-    $lolID = trim($_POST['lolID']);
     $birthDay = trim($_POST['birthDay']);
 
     if ($name == null) {
@@ -48,8 +45,8 @@ if (is_post()) {
     if (count($errors) == 0) {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = $db->prepare("INSERT INTO players (email, password, name, steamID,uplayName,lolName,birthDay) VALUES (?,?,?,?,?,?,?)");
-        $sql->bind_param("sssssss", $email, $hashedPassword, $name, $steamID, $ubisoftID, $lolID, $birthDay);
+        $sql = $db->prepare("INSERT INTO players (email, password, name, birthDay) VALUES (?,?,?,?)");
+        $sql->bind_param("ssss", $email, $hashedPassword, $name, $birthDay);
         $sql->execute();
         $sql->close();
 
@@ -93,21 +90,6 @@ if (is_post()) {
                 <td><input id="passwordAgain" type="password" name="passwordAgain" value="<?php echo isset($passwordAgain) ? $passwordAgain : ''; ?>">
                     <?php print_form_errors('passwordAgain', $errors); ?>
                     <?php print_form_errors('passwordsNotMatching', $errors); ?></td>
-            </tr>
-            <tr>
-                <td>Steam ID:</td>
-                <td><input id="steamID" type="text" name="steamID" value="<?php echo isset($steamID) ? $steamID : ''; ?>">
-                    <?php print_form_errors('steamID', $errors); ?></td>
-            </tr>
-            <tr>
-                <td>Ubisoft account name:</td>
-                <td><input id="ubisoftID" type="text" name="ubisoftID" value="<?php echo isset($ubisoftID) ? $ubisoftID : ''; ?>">
-                    <?php print_form_errors('ubisoftID', $errors); ?></td>
-            </tr>
-            <tr>
-                <td>LOL name:</td>
-                <td><input id="lolID" type="text" name="lolID" value="<?php echo isset($lolID) ? $lolID : ''; ?>">
-                    <?php print_form_errors('lolID', $errors); ?></td>
             </tr>
             <tr>
                 <td colspan=2><button class="btn" type="submit">Register</button></td>

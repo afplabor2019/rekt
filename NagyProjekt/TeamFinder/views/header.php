@@ -16,30 +16,24 @@
 </head>
 
 <body class="bodyClass">
-  <header>
-    <ul class="navBar">
-      <li class="inline"><a class="logo" href="<?php echo route(); ?>">( ͡° ͜ʖ ͡°) REKT</a></li>
-      <li class="inline"><a class="logo" href="<?php echo route(); ?>">Home</a></li>
-      <li class="inline right">
-        <div class="dropdown" class="right">
-          <img src="Resources\man-user.svg" alt="User" class="headerIcon">
-          <div class="dropdown-content">
-            <?php
-            if (user_logged_in()) {
-              echo '<a href="' . route(['page' => 'profile']) . '">Profile</a>';
-              echo '<a href="' . route(['page' => 'logout']) . '">Log out</a>';
-            } else {
-              echo '<a href="' . route(['page' => 'login']) . '">Log in</a>';
-              echo '<a href="' . route(['page' => 'register']) . '">Register</a>';
-            }
-            ?>
-          </div>
+  <header id="headerC">
+    <div class="inline"><a class="logo" href="<?php echo route(); ?>">( ͡° ͜ʖ ͡°) REKT</a></div>
+    <div class="inline"><a class="logo" href="<?php echo route(); ?>">Home</a></div>
+    <div class="inline">
+      <div class="dropdown" class="right">
+        <img src="Resources\man-user.svg" alt="User" class="headerIcon">
+        <div class="dropdown-content">
+          <?php
+          if (user_logged_in()) {
+            echo '<a href="' . route(['page' => 'profile']) . '">Profile</a>';
+            echo '<a href="' . route(['page' => 'messages']) . '">Messages</a>';
+            echo '<a href="' . route(['page' => 'logout']) . '">Log out</a>';
+          } else {
+            echo '<a href="' . route(['page' => 'login']) . '">Log in</a>';
+            echo '<a href="' . route(['page' => 'register']) . '">Register</a>';
+          }
+          ?>
         </div>
-      </li>
-      <li class="inline right">
-        <a href="<?php echo route(['page' => 'messages']);?>">
-          <img src="Resources\envelope.svg" alt="messages" class="headerIcon">
-        </a>
-      </li>
-    </ul>
+      </div>
+    </div>
   </header>

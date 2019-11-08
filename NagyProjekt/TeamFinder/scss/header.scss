@@ -10,30 +10,24 @@ html * {
   width: $headerIconsSize;
 }
 
-.navBar {
-  position: absolute;
+#headerC {
+  display: -webkit-flex; /* Safari */
+  -webkit-justify-content: space-between; /* Safari 6.1+ */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
-  list-style: none;
-  width: 100%;
-  height: 35px;
-  padding: 0px;
-  margin: 0px;
+  text-decoration: none;
 }
 
-.navBar .inline {
-  display: inline;
+#headerC .inline {
   padding-right: $headerPadding;
 }
 
-.navBar .logo {
+#headerC .logo {
   text-decoration: none;
   color: $textColor;
-}
-
-.right {
-  float: right;
-  padding-right: 0px;
-  padding-left: $headerPadding;
+  padding-left: 15px;
 }
 
 .bodyClass {

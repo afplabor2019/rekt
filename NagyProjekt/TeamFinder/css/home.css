@@ -1,20 +1,24 @@
-#homeTable {
+/*#homeTable {
   position: absolute;
   right: 0px;
   width: 100%;
   top: 0px;
   height: 100%;
   border: 0px;
-  text-align: center; }
+  text-align: center;
+}
 
 #homeCSGO {
-  width: 33%; }
+  width: 33%;
+}
 
 #homeLol {
-  width: 33%; }
+  width: 33%;
+}
 
 #homeR6s {
-  width: 33%; }
+  width: 33%;
+}
 
 #homeCSGOA {
   text-align: center;
@@ -26,7 +30,8 @@
   margin-bottom: 150px;
   margin-left: 50px;
   margin-right: 50px;
-  background-color: #3e8e41; }
+  background-color: #3e8e41;
+}
 
 #homeLolA {
   text-align: center;
@@ -38,7 +43,8 @@
   margin-bottom: 150px;
   margin-left: 50px;
   margin-right: 50px;
-  background-color: rebeccapurple; }
+  background-color: rebeccapurple;
+}
 
 #homeR6sA {
   text-align: center;
@@ -50,4 +56,6 @@
   margin-bottom: 150px;
   margin-left: 50px;
   margin-right: 50px;
-  background-color: orange; }
+  background-color: orange;
+}
+*/

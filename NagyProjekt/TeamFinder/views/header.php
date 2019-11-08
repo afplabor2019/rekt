@@ -10,16 +10,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Team Finder</title>
 
-  <link rel="stylesheet" href="css/style.css" ?>
+  <link rel="stylesheet" href="css/dropdownMenu.css" type="text/css" ?>
+  <link rel="stylesheet" href="css/header.css" type="text/css" ?>
+  <link rel="stylesheet" href="css/home.css" type="text/css" ?>
 </head>
 
-<body>
+<body class="bodyClass">
   <header>
     <ul class="navBar">
-      <li><a class="Logo" href="<?php echo route(); ?>">( ͡° ͜ʖ ͡°) REKT</a></li>
-      <li><a href="<?php echo route(); ?>">Home</a></li>
-      <li style="float:right">
-        <div class="dropdown" style="float:right;">
+      <li class="inline"><a class="logo" href="<?php echo route(); ?>">( ͡° ͜ʖ ͡°) REKT</a></li>
+      <li class="inline"><a class="logo" href="<?php echo route(); ?>">Home</a></li>
+      <li class="inline right">
+        <div class="dropdown" class="right">
           <img src="Resources\man-user.svg" alt="User" class="headerIcon">
           <div class="dropdown-content">
             <?php
@@ -34,7 +36,7 @@
           </div>
         </div>
       </li>
-      <li style="float:right">
+      <li class="inline right">
         <a href="<?php echo route(['page' => 'messages']);?>">
           <img src="Resources\envelope.svg" alt="messages" class="headerIcon">
         </a>

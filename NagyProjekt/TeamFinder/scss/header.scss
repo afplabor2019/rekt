@@ -1,0 +1,41 @@
+@import "variables";
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+html * {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.headerIcon {
+  height: $headerIconsSize;
+  width: $headerIconsSize;
+}
+
+.navBar {
+  position: absolute;
+  background-color: white;
+  list-style: none;
+  width: 100%;
+  height: 35px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.navBar .inline {
+  display: inline;
+  padding-right: $headerPadding;
+}
+
+.navBar .logo {
+  text-decoration: none;
+  color: $textColor;
+}
+
+.right {
+  float: right;
+  padding-right: 0px;
+  padding-left: $headerPadding;
+}
+
+.bodyClass {
+  background-color: $bgColor;
+}

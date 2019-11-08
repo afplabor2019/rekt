@@ -1,0 +1,53 @@
+#homeTable {
+  position: absolute;
+  right: 0px;
+  width: 100%;
+  top: 0px;
+  height: 100%;
+  border: 0px;
+  text-align: center; }
+
+#homeCSGO {
+  width: 33%; }
+
+#homeLol {
+  width: 33%; }
+
+#homeR6s {
+  width: 33%; }
+
+#homeCSGOA {
+  text-align: center;
+  vertical-align: center;
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #3e8e41; }
+
+#homeLolA {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  margin: 50px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: rebeccapurple; }
+
+#homeR6sA {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  margin: 50px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: orange; }

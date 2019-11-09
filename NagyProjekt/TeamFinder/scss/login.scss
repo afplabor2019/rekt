@@ -1,0 +1,14 @@
+@import "variables";
+
+#login {
+  padding: $loginPadding;
+}
+
+#loginTitle {
+  color: $textSecondaryColor;
+}
+
+.loginLeft {
+  text-align: left;
+  padding-right: 5px;
+}

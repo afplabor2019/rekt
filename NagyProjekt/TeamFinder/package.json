@@ -7,6 +7,8 @@
   "scripts": {
     "dropDown": "node-sass scss/dropdownMenu.scss css/dropdownMenu.css",
     "header": "node-sass scss/header.scss css/header.css",
-    "home": "node-sass scss/home.scss css/home.css"
+    "home": "node-sass scss/home.scss css/home.css",
+    "login": "node-sass scss/login.scss css/login.css",
+    "global": "node-sass scss/global.scss css/global.css"
   }
 }

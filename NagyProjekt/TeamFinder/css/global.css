@@ -1,0 +1,22 @@
+.labelC {
+  background-color: white;
+  -webkit-box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75); }
+
+.middle {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.textInput {
+  border: 1px solid #242424; }
+
+.buttonC {
+  border: 1px solid #242424;
+  background-color: white;
+  text-align: center; }

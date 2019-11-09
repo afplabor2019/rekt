@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 html * {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase; }
 
 .headerIcon {
   height: 25px;

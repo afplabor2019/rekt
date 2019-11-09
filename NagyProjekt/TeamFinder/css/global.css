@@ -16,7 +16,8 @@
 
 .textInput {
   border: 1px solid #242424;
-  width: 150px; }
+  width: 150px;
+  text-transform: none; }
 
 .buttonC {
   border: 1px solid #242424;
@@ -35,3 +36,6 @@
   color: #EC2C24;
   border: 1px solid #560b07;
   padding: 5px; }
+
+.noUpperCase {
+  text-transform: none; }

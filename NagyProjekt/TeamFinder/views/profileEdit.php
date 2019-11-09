@@ -27,7 +27,7 @@ if (is_post()) {
     }
 
     $select = mysqli_query($db, "SELECT `email` FROM `players` WHERE `email` = '" . $_POST['email'] . "'") or exit(mysqli_error($connectionID));
-    if (mysqli_num_rows($select)) {
+    if (mysqli_num_rows($select) && $email !== $user['email']) {
         $errors['emailRegistered'][] = "Email is already taken!";
     }
 
@@ -60,42 +60,42 @@ if (is_post()) {
 ?>
 
 
-<div class="formTables">
+<div class="labelC middle">
     <form action="<?php echo route(['page' => 'profileEdit']); ?>" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
-                <td colspan=2>Registration</td>
+                <td class="secondaryColor" colspan=2>Registration</td>
             </tr>
             <tr>
-                <td>User name:</td>
-                <td><input id="name" type="text" name="name" value="<?php echo $user['name']; ?>">
+                <td class="formLeft">User name:</td>
+                <td class="textInput"><input id="name" type="text" name="name" value="<?php echo $user['name']; ?>">
                     <?php print_form_errors('name', $errors); ?></td>
             </tr>
             <tr>
-                <td>Email:</td>
-                <td><input id="email" type="email" name="email" value="<?php echo $user['email']; ?>">
+                <td class="formLeft"></td>Email:</td>
+                <td class="textInput"><input id="email" type="email" name="email" value="<?php echo $user['email']; ?>">
                     <?php print_form_errors('email', $errors); ?>
                     <?php print_form_errors('emailRegistered', $errors); ?></td>
             </tr>
             <tr>
-                <td>Birth day:</td>
-                <td><input id="birthDay" type="date" name="birthDay" min='1900-01-01' max='2019-12-31' value="<?php echo $user['birthDay']; ?>">
+                <td class="formLeft">Birth day:</td>
+                <td class="textInput"><input id="birthDay" type="date" name="birthDay" min='1900-01-01' max='2019-12-31' value="<?php echo $user['birthDay']; ?>">
                     <?php print_form_errors('birthDay', $errors); ?></td>
             </tr>
             <tr>
-                <td>Password:</td>
-                <td><input id="password" type="password" name="password" value="<?php echo isset($password) ? $password : ''; ?>">
+                <td class="formLeft">Password:</td>
+                <td class="textInput"><input id="password" type="password" name="password" value="<?php echo isset($password) ? $password : ''; ?>">
                     <?php print_form_errors('password', $errors); ?>
                     <?php print_form_errors('shortPassword', $errors); ?></td>
             </tr>
             <tr>
-                <td>Password again:</td>
-                <td><input id="passwordAgain" type="password" name="passwordAgain" value="<?php echo isset($passwordAgain) ? $passwordAgain : ''; ?>">
+                <td class="formLeft">Password again:</td>
+                <td class="textInput"><input id="passwordAgain" type="password" name="passwordAgain" value="<?php echo isset($passwordAgain) ? $passwordAgain : ''; ?>">
                     <?php print_form_errors('passwordAgain', $errors); ?>
                     <?php print_form_errors('passwordsNotMatching', $errors); ?></td>
             </tr>
             <tr>
-                <td colspan=2><button class="btn" type="submit">Update profile</button></td>
+                <td colspan=2><button class="buttonC" type="submit">Update profile</button></td>
             </tr>
         </table>
     </form>

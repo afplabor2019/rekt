@@ -5,24 +5,21 @@
 $user = current_user($db);
 ?>
 
-<table class="label">
+<table class="labelC middle">
     <tr>
-        <td colspan="2">
+        <td class="secondaryColor noUpperCase" id="profileName"><?php echo $user['name'] ?></td>
+        <td>
             <?php
             echo '<a href="' . route(['page' => 'profileEdit']) . '"><img class="headerIcon" src="Resources\edit.svg" alt="Edit profile" title="Edit profile"></a>';
             ?>
         </td>
     </tr>
     <tr>
-        <td>User name:</td>
-        <td><?php echo $user['name'] ?></td>
+        <td class="formLeft">Birth day:</td>
+        <td class="formLeft"><?php echo $user['birthDay'] ?></td>
     </tr>
     <tr>
-        <td>Birth day:</td>
-        <td><?php echo $user['birthDay'] ?></td>
-    </tr>
-    <tr>
-        <td>Email:</td>
-        <td><?php echo $user['email'] ?></td>
+        <td class="formLeft">Email:</td>
+        <td class="formLeft"><?php echo $user['email'] ?></td>
     </tr>
 </table>

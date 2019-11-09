@@ -89,7 +89,7 @@ function print_form_errors($input, $errors)
 {
     if (array_key_exists($input, $errors)) {
         foreach ($errors[$input] as $error) {
-            echo "<p class='input-error'>$error</p>";
+            echo "<p class='error'>$error</p>";
         }
     }
 }

@@ -1,14 +1,15 @@
 @import "variables";
 
-.labelC{
+.labelC {
   background-color: white;
-  -webkit-box-shadow: 8px 8px 3px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 8px 8px 3px 0px rgba(0,0,0,0.75);
-  box-shadow: 8px 8px 3px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75);
+  padding: $loginPadding;
   //border: 2px solid $textColor;
 }
 
-.middle{
+.middle {
   text-align: center;
   margin: 0;
   position: absolute;
@@ -18,12 +19,29 @@
   transform: translate(-50%, -50%);
 }
 
-.textInput{
+.textInput {
   border: 1px solid $textColor;
+  width: 150px;
 }
 
-.buttonC{
+.buttonC {
   border: 1px solid $textColor;
   background-color: white;
   text-align: center;
+  cursor: pointer;
+}
+
+.secondaryColor {
+  color: $textSecondaryColor;
+}
+
+.formLeft {
+  text-align: left;
+  padding-right: 5px;
+}
+
+.error {
+  color: $alertColor;
+  border: 1px solid darken($alertColor, 35%);
+  padding: 5px;
 }

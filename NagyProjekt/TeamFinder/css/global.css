@@ -2,7 +2,8 @@
   background-color: white;
   -webkit-box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75); }
+  box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75);
+  padding: 15px; }
 
 .middle {
   text-align: center;
@@ -14,9 +15,23 @@
   transform: translate(-50%, -50%); }
 
 .textInput {
-  border: 1px solid #242424; }
+  border: 1px solid #242424;
+  width: 150px; }
 
 .buttonC {
   border: 1px solid #242424;
   background-color: white;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer; }
+
+.secondaryColor {
+  color: #FB9F19; }
+
+.formLeft {
+  text-align: left;
+  padding-right: 5px; }
+
+.error {
+  color: #EC2C24;
+  border: 1px solid #560b07;
+  padding: 5px; }

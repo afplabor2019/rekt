@@ -41,7 +41,7 @@ if (is_post()) {
 <div class="labelC middle" id="login">
     <form action="<?php echo route(['page' => 'login']); ?>" method="POST">
         <?php if (count($errors)) : ?>
-            <div class="alert alert-error">
+            <div class="error">
                 <?php foreach ($errors as $error) : ?>
                     <p><?php echo $error; ?></p>
                 <?php endforeach; ?>
@@ -51,15 +51,15 @@ if (is_post()) {
         <table>
             <tr>
                 <td colspan=2>
-                    <h1 id="loginTitle">Sign in</h1>
+                    <h1 class="secondaryColor">Sign in</h1>
                 </td>
             </tr>
             <tr>
-                <td class="loginLeft"><label for="name">User name</label></td>
+                <td class="formLeft"><label for="name">User name</label></td>
                 <td><input class="textInput" id="name" type="text" name="name" value="<?php echo isset($name) ? $name : ''; ?>"></td>
             </tr>
             <tr>
-                <td class="loginLeft"><label for="password">Password</label></td>
+                <td class="formLeft"><label for="password">Password</label></td>
                 <td><input class="textInput" id="password" type="password" name="password" value=""></td>
             </tr>
 

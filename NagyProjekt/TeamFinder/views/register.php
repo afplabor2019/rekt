@@ -56,59 +56,59 @@ if (is_post()) {
 
 ?>
 
-<div class="formTables">
+<div class="labelC middle">
     <form action="<?php echo route(['page' => 'register']); ?>" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
-                <td colspan=2>Registration</td>
+                <td class="secondaryColor" colspan=2>Registration</td>
             </tr>
             <tr>
-                <td>User name:</td>
-                <td><input id="name" type="text" name="name" value="<?php echo isset($name) ? $name : ''; ?>">
+                <td class="formLeft">User name:</td>
+                <td><input class="textInput" id="name" type="text" name="name" value="<?php echo isset($name) ? $name : ''; ?>">
                     <?php print_form_errors('name', $errors); ?></td>
             </tr>
             <tr>
-                <td>Email:</td>
-                <td><input id="email" type="email" name="email" value="<?php echo isset($email) ? $email : ''; ?>">
+                <td class="formLeft">Email:</td>
+                <td><input class="textInput" id="email" type="email" name="email" value="<?php echo isset($email) ? $email : ''; ?>">
                     <?php print_form_errors('email', $errors); ?>
                     <?php print_form_errors('emailRegistered', $errors); ?></td>
             </tr>
             <tr>
-                <td>Birth day:</td>
-                <td><input id="birthDay" type="date" name="birthDay" min='1900-01-01' max='2019-12-31' value="<?php echo isset($birthDay) ? $birthDay : ''; ?>">
+                <td class="formLeft">Birth day:</td>
+                <td><input class="textInput" id="birthDay" type="date" name="birthDay" min='1900-01-01' max='2019-12-31' value="<?php echo isset($birthDay) ? $birthDay : ''; ?>">
                     <?php print_form_errors('birthDay', $errors); ?></td>
             </tr>
             <tr>
-                <td>Password:</td>
-                <td><input id="password" type="password" name="password" value="<?php echo isset($password) ? $password : ''; ?>">
+                <td class="formLeft">Password:</td>
+                <td><input class="textInput" id="password" type="password" name="password" value="<?php echo isset($password) ? $password : ''; ?>">
                     <?php print_form_errors('password', $errors); ?>
                     <?php print_form_errors('shortPassword', $errors); ?></td>
             </tr>
             <tr>
-                <td>Password again:</td>
-                <td><input id="passwordAgain" type="password" name="passwordAgain" value="<?php echo isset($passwordAgain) ? $passwordAgain : ''; ?>">
+                <td class="formLeft">Password again:</td>
+                <td><input class="textInput" id="passwordAgain" type="password" name="passwordAgain" value="<?php echo isset($passwordAgain) ? $passwordAgain : ''; ?>">
                     <?php print_form_errors('passwordAgain', $errors); ?>
                     <?php print_form_errors('passwordsNotMatching', $errors); ?></td>
             </tr>
             <tr>
-                <td colspan=2><button class="btn" type="submit">Register</button></td>
+                <td colspan=2><button class="buttonC" type="submit">Register</button></td>
             </tr>
         </table>
     </form>
 </div>
 
 <script>
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
- if(dd<10){
-        dd='0'+dd
-    } 
-    if(mm<10){
-        mm='0'+mm
-    } 
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
 
-today = yyyy+'-'+mm+'-'+dd;
-document.getElementById("birthDay").setAttribute("max", today);
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("birthDay").setAttribute("max", today);
 </script>

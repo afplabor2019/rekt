@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="css/dropdownMenu.css" type="text/css" ?>
   <link rel="stylesheet" href="css/header.css" type="text/css" ?>
   <link rel="stylesheet" href="css/home.css" type="text/css" ?>
-  <link rel="stylesheet" href="css/login.css" type="text/css" ?>
   <link rel="stylesheet" href="css/global.css" type="text/css" ?>
 </head>
 

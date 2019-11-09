@@ -8,6 +8,7 @@ html * {
 .headerIcon {
   height: $headerIconsSize;
   width: $headerIconsSize;
+  margin: $headerIconMargin, $headerIconMargin, $headerIconMargin, $headerIconMargin;
 }
 
 #headerC {
@@ -27,7 +28,7 @@ html * {
 #headerC .logo {
   text-decoration: none;
   color: $textColor;
-  padding-left: 15px;
+  padding-left: $headerPadding;
 }
 
 .bodyClass {

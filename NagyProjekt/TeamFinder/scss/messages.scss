@@ -1,0 +1,25 @@
+@import "variables";
+
+#msgContacts {
+  border-right: 1px;
+  border-right-color: $textColor;
+  border-right-style: solid;
+  height: 100%;
+  width: 200px;
+}
+
+.msgContactpanel {
+  text-decoration: none;
+  color: $textColor;
+  background-color: white;
+  border: 1px solid $textColor;
+}
+
+.activeMsg {
+  background-color: #FB9F19;
+}
+
+#msgContactsTable {
+  height: 100%;
+  width: 100%;
+}

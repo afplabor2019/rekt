@@ -1,0 +1,19 @@
+#msgContacts {
+  border-right: 1px;
+  border-right-color: #242424;
+  border-right-style: solid;
+  height: 100%;
+  width: 200px; }
+
+.msgContactpanel {
+  text-decoration: none;
+  color: #242424;
+  background-color: white;
+  border: 1px solid #242424; }
+
+.activeMsg {
+  background-color: #FB9F19; }
+
+#msgContactsTable {
+  height: 100%;
+  width: 100%; }

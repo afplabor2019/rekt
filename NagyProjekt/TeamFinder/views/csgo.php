@@ -50,18 +50,26 @@ if (is_post()) {
 }
 ?>
 
-<div class="label">
+<div class="labelC middleHorizontal">
     <form action="<?php echo route(['page' => 'csgo']); ?>" method="POST" enctype="multipart/form-data">
-        <div class="label">
+        <div id="top">
             <Table>
-                <tr>
-                    <td><input type="submit" name="player" value="Players" /></td>
-                    <td><input type="submit" name="teams" value="Teams" /></td>
+                <tr id="searchFill">
+                    <td class="middleHorizontal"><input class="buttonC<?php
+                                                                        if (!$teams) {
+                                                                            echo ' teamsActive';
+                                                                        }
+                                                                        ?>" type="submit" name="player" value="Players" /></td>
+                    <td class="searchMiddle"><input class="buttonC<?php
+                                                                    if ($teams) {
+                                                                        echo ' teamsActive';
+                                                                    }
+                                                                    ?>" type="submit" name="teams" value="Teams" /></td>
                 </tr>
                 <tr>
                     <td>Minimum skill:</td>
                     <td>
-                        <select name="minRank" id="minRank">
+                        <select class="textInput" name="minRank" id="minRank">
                             <?php
                             $fn = fopen("Resources\csgoRanks.txt", "r");
                             $i = 0;
@@ -80,7 +88,7 @@ if (is_post()) {
                     </td>
                     <td>Maximum skill:</td>
                     <td>
-                        <select name="maxRank" id="maxRank">
+                        <select class="textInput" name="maxRank" id="maxRank">
                             <?php
                             $fn = fopen("Resources\csgoRanks.txt", "r");
                             $i = 0;
@@ -101,7 +109,7 @@ if (is_post()) {
                 <tr>
                     <td>Minimum age:</td>
                     <td>
-                        <select name="minAge" id="minAge">
+                        <select class="textInput" name="minAge" id="minAge">
                             <?php
                             for ($i = 1; $i <= 100; $i++) {
                                 echo '<option value="' . $i . '" ';
@@ -115,7 +123,7 @@ if (is_post()) {
                     </td>
                     <td>Maximum age:</td>
                     <td>
-                        <select name="maxAge" id="maxAge">
+                        <select class="textInput" name="maxAge" id="maxAge">
                             <?php
                             for ($i = 1; $i <= 100; $i++) {
                                 echo '<option value="' . $i . '" ';
@@ -133,7 +141,7 @@ if (is_post()) {
                         Region:
                     </td>
                     <td>
-                        <select name="region" id=region>
+                        <select class="textInput" name="region" id=region>
                             <?php
                             $fn = fopen('Resources\regions.txt', "r");
                             $i = 0;
@@ -154,7 +162,7 @@ if (is_post()) {
                         Team goal:
                     </td>
                     <td>
-                        <select name="goal" id=goal>
+                        <select class="textInput" name="goal" id=goal>
                             <option value="any">any</option>
                             <option value="havefun">Have fun</option>
                             <option value="competitive">Play competitive</option>
@@ -162,14 +170,10 @@ if (is_post()) {
                         </select>
                     </td>
                 </tr>
-            </Table>
-        </div>
-        <div class="label">
-            <table>
                 <tr>
                     <td>Language:</td>
                     <td>
-                        <select name="language" id=language>
+                        <select class="textInput" name="language" id=language>
                             <?php
                             $fn = fopen('Resources\languages.txt', "r");
                             while (!feof($fn)) {
@@ -183,12 +187,18 @@ if (is_post()) {
                     <?php
                     if ($teams) {
                         echo '<td>Team name:</td>';
-                        echo '<td><input id="teamName" type="text" name="teamName"></td>';
+                        echo '<td><input class="textInput" id="teamName" type="text" name="teamName"></td>';
                     }
                     ?>
                 </tr>
+            </Table>
+        </div>
+        <div class="bottom">
+            <table>
                 <tr>
-                    <td>Communication:</td>
+                    <td class="secondaryColor">Communication:</td>
+                </tr>
+                <tr>
                     <td>
                         <input type="checkbox" name="communication[]" value="discord"> Discord
                     </td>
@@ -203,17 +213,18 @@ if (is_post()) {
         </div>
         <div class="label">
             <table>
-                <th>Roles</th>
                 <tr>
-                    <td>
-                        <input type="checkbox" name="roles[]" value="entry"> Entry fragger
-                    </td>
-                    <td>
-                        <input type="checkbox" name="roles[]" value="strategy"> Strategy caller
-                    </td>
-                    <td>
-                        <input type="checkbox" name="roles[]" value="refragger"> Refragger
-                    </td>
+                    <td class="secondaryColor">Roles:</td>
+                </tr>
+                <td>
+                    <input type="checkbox" name="roles[]" value="entry"> Entry fragger
+                </td>
+                <td>
+                    <input type="checkbox" name="roles[]" value="strategy"> Strategy caller
+                </td>
+                <td>
+                    <input type="checkbox" name="roles[]" value="refragger"> Refragger
+                </td>
                 </tr>
                 <tr>
                     <td>
@@ -225,9 +236,11 @@ if (is_post()) {
                 </tr>
             </table>
         </div>
-        <input type="submit" name="search" value="Search" />
-        <input type="submit" name="add" value="Add" />
-        <input type="submit" name="*" value="Show All Ad" />
+        <div id="searchButtons">
+            <input class="buttonC" type="submit" name="search" value="Search" />
+            <input class="buttonC" type="submit" name="add" value="Add" />
+            <input class="buttonC" type="submit" name="*" value="Show All Ad" />
+        </div>
     </form>
 </div>
 
@@ -243,7 +256,7 @@ if (is_post()) {
             include('adListItem.php');
         }
     } else {
-        echo '<div>No ad found!</div>';
+        echo '<div class="labelC noAdd middleHorizontal secondaryColor">No ad found!</div>';
     }
     ?>
 </div>

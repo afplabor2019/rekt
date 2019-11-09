@@ -1,0 +1,30 @@
+.adItemI {
+  margin-top: 15px !important;
+  display: inline-block !important; }
+
+.searchName {
+  font-size: 30px;
+  text-decoration: underline; }
+
+.searchGameIcon,
+.rankIcon {
+  height: 50px;
+  width: 50px; }
+
+#searchRanksTD {
+  vertical-align: center; }
+
+#searchMiddle {
+  border-right: 1px solid #242424; }
+
+.searchHL {
+  text-decoration: underline;
+  font-size: 20px; }
+
+#searchTop {
+  padding-top: 3px;
+  border-top: 3px solid #242424; }
+
+#adItemWrapper {
+  width: 100% !important;
+  text-align: center !important; }

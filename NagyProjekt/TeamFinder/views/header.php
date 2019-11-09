@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="css/home.css" type="text/css" ?>
   <link rel="stylesheet" href="css/global.css" type="text/css" ?>
   <link rel="stylesheet" href="css/profile.css" type="text/css" ?>
+  <link rel="stylesheet" href="css/messages.css" type="text/css" ?>
+  <link rel="stylesheet" href="css/search.css" type="text/css" ?>
+  <link rel="stylesheet" href="css/adItem.css" type="text/css" ?>
 </head>
 
 <body class="bodyClass">

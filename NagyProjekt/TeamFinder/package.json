@@ -12,6 +12,7 @@
     "profile": "node-sass scss/profile.scss css/profile.css",
     "messages": "node-sass scss/messages.scss css/messages.css",
     "search": "node-sass scss/search.scss css/search.css",
-    "adItem": "node-sass scss/adItem.scss css/adItem.css"
+    "adItem": "node-sass scss/adItem.scss css/adItem.css",
+    "404": "node-sass scss/pnf.scss css/pnf.css"
   }
 }

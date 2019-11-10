@@ -9,7 +9,7 @@ html * {
 .headerIcon {
   height: $headerIconsSize;
   width: $headerIconsSize;
-  margin: $headerIconMargin, $headerIconMargin, $headerIconMargin, $headerIconMargin;
+  margin: $headerIconMargin, $headerIconMargin, $headerIconMargin, $headerIconMargin !important;
 }
 
 #headerC {

@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/messages.css" type="text/css" ?>
   <link rel="stylesheet" href="css/search.css" type="text/css" ?>
   <link rel="stylesheet" href="css/adItem.css" type="text/css" ?>
+  <link rel="stylesheet" href="css/pnf.css" type="text/css" ?>
 </head>
 
 <body class="bodyClass">

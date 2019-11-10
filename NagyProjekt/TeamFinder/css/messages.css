@@ -3,13 +3,17 @@
   border-right-color: #242424;
   border-right-style: solid;
   height: 100%;
-  width: 200px; }
+  width: 300px;
+  vertical-align: top; }
 
 .msgContactpanel {
-  text-decoration: none;
-  color: #242424;
-  background-color: white;
-  border: 1px solid #242424; }
+  background-color: white !important;
+  border: 1px solid #242424 !important;
+  margin-bottom: 5px !important; }
+
+.msgContactpanelA {
+  text-decoration: none !important;
+  color: #242424 !important; }
 
 .activeMsg {
   background-color: #FB9F19; }

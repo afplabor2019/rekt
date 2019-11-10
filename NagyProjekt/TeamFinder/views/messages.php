@@ -40,7 +40,7 @@ if (is_post()) {
     <h1 class="secondaryColor">MESSAGES
         <?php
         if ($toIds != null || $toIds != "") {
-            echo 'TO' . getUserById($db, $toIds)['name'];
+            echo 'TO ' . getUserById($db, $toIds)['name'];
         }
         ?>
     </h1>
@@ -54,7 +54,7 @@ if (is_post()) {
                     while ($msg = mysqli_fetch_array($messages)) {
                         if ($msg['fromId'] != $user['id'] && !in_array($msg['fromId'], $contacts)) {
                             $contacts[sizeof($contacts) + 1] = $msg['fromId'];
-                            echo '<tr class="msgContactpanel ';
+                            echo '<tr class="';
                             if ($toIds == $msg['fromId']) {
                                 echo 'activeMsg';
                             }
@@ -66,7 +66,7 @@ if (is_post()) {
                             if ($toIds == $msg['toID']) {
                                 echo 'activeMsg';
                             }
-                            echo '"><td><a href="' . route(['page' => 'messages', 'toId' => $msg['toID']]) . '">' . getUserById($db, $msg['toID'])['name'] . '</a></td></tr>';
+                            echo '"><td class="msgContactpanel"><a class="msgContactpanelA" href="' . route(['page' => 'messages', 'toId' => $msg['toID']]) . '">' . getUserById($db, $msg['toID'])['name'] . '</a></td></tr>';
                         }
                     }
                     ?>

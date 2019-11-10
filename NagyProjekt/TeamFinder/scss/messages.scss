@@ -5,14 +5,19 @@
   border-right-color: $textColor;
   border-right-style: solid;
   height: 100%;
-  width: 200px;
+  width: 300px;
+  vertical-align: top;
 }
 
 .msgContactpanel {
-  text-decoration: none !important;
-  color: $textColor !important;
   background-color: white !important;
   border: 1px solid $textColor !important;
+  margin-bottom: 5px !important;
+}
+
+.msgContactpanelA{
+  text-decoration: none !important;
+  color: $textColor !important;
 }
 
 .activeMsg {

@@ -190,9 +190,9 @@ function getAllAdByGame($db, $game)
 
 function redirectToMessages($toId)
 {
-    $_SESSION['toId'] = $toId;
-    $_SESSION['sendTo'] = true;
-    echo route(['page' => 'messages']);
+  /* $_SESSION['toId'] = $toId;
+    $_SESSION['sendTo'] = true;*/
+    echo  route(['page' => 'messages', 'toId' => $toId]);
 }
 
 function getAllMessagesForUser($db, $userID)

@@ -17,3 +17,24 @@
 #msgContactsTable {
   height: 100%;
   width: 100%; }
+
+.msgSend {
+  margin-top: 5px;
+  float: right !important;
+  width: 100px; }
+
+.msgInputText {
+  float: left !important;
+  width: 100%; }
+
+.msgRight {
+  text-align: right; }
+
+.msgLeft {
+  text-align: left; }
+
+.msgMSGTable {
+  width: 100%; }
+
+.msgMain {
+  margin-top: 15px; }

@@ -36,8 +36,14 @@ if (is_post()) {
 }
 ?>
 
-<div class="labelC middle">
-    <h1 class="secondaryColor">MESSAGES</h1>
+<div class="labelC middle msgMain">
+    <h1 class="secondaryColor">MESSAGES
+        <?php
+        if ($toIds != null || $toIds != "") {
+            echo 'TO' . getUserById($db, $toIds)['name'];
+        }
+        ?>
+    </h1>
     <table>
         <tr>
             <td id="msgContacts">
@@ -68,22 +74,24 @@ if (is_post()) {
             </td>
             <td>
                 <div style="overflow-y:scroll; width:400px; height:400px;">
-                    <?php
-                    $messages = getAllMessageBetweenTwoUser($db, $user['id'], $toIds);
-                    while ($msg = mysqli_fetch_array($messages)) {
-                        echo '<p style="';
-                        if ($user['id'] == $msg['fromId']) {
-                            echo 'float: right"';
-                        } else {
-                            echo 'float: left"';
+                    <table class="msgMSGTable">
+                        <?php
+                        $messages = getAllMessageBetweenTwoUser($db, $user['id'], $toIds);
+                        while ($msg = mysqli_fetch_array($messages)) {
+                            echo '<tr>';
+                            if ($user['id'] == $msg['fromId']) {
+                                echo '<td class="msgLeft"></td><td class="msgRight">' . $msg['text'] . '</td>';
+                            } else {
+                                echo '<td class="msgLeft">' . $msg['text'] . '</td><td class="msgRight"></td>';
+                            }
+                            echo '</tr>';
                         }
-                        echo '>' . $msg['text'] . '</p><br>';
-                    }
-                    ?>
+                        ?>
+                    </table>
                 </div>
                 <form action="<?php echo route(['page' => 'messages', 'toId' => $toIds]); ?>" method="POST" enctype="multipart/form-data">
-                    <input style="float: left" type="text" name="message">
-                    <input type="submit" name="add" value="Add" />
+                    <input class="textInput msgInputText" type="text" name="message">
+                    <input class="buttonC msgSend" type="submit" name="add" value="Add" />
                 </form>
             </td>
         </tr>

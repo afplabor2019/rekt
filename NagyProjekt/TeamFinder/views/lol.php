@@ -217,21 +217,21 @@ if (is_post()) {
                     <td class="secondaryColor">Roles:</td>
                 </tr>
                 <td>
-                    <input type="checkbox" name="roles[]" value="entry"> Entry fragger
+                    <input type="checkbox" name="roles[]" value="ADC"> ADC
                 </td>
                 <td>
-                    <input type="checkbox" name="roles[]" value="strategy"> Strategy caller
+                    <input type="checkbox" name="roles[]" value="Top"> Top
                 </td>
                 <td>
-                    <input type="checkbox" name="roles[]" value="refragger"> Refragger
+                    <input type="checkbox" name="roles[]" value="Mid"> Mid
                 </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" name="roles[]" value="lurker"> Lurker
+                        <input type="checkbox" name="roles[]" value="Jungler"> Jungler
                     </td>
                     <td>
-                        <input type="checkbox" name="roles[]" value="awper"> AWPer
+                        <input type="checkbox" name="roles[]" value="support"> Support
                     </td>
                 </tr>
             </table>

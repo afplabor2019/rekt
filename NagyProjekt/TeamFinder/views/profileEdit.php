@@ -72,7 +72,7 @@ if (is_post()) {
                     <?php print_form_errors('name', $errors); ?></td>
             </tr>
             <tr>
-                <td class="formLeft"></td>Email:</td>
+                <td class="formLeft">Email:</td>
                 <td class="textInput"><input id="email" type="email" name="email" value="<?php echo $user['email']; ?>">
                     <?php print_form_errors('email', $errors); ?>
                     <?php print_form_errors('emailRegistered', $errors); ?></td>

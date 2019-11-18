@@ -1,0 +1,14 @@
+#top {
+  border-bottom: 1px solid #242424; }
+
+.buttonC.teamsActive {
+  background-color: #FB9F19 !important; }
+
+#searchFill {
+  width: 100%; }
+
+#searchButtons {
+  margin-top: 15px !important; }
+
+.noAdd {
+  margin-top: 25px !important; }

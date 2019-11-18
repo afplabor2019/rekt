@@ -1,0 +1,37 @@
+@import "variables";
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+html * {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.headerIcon {
+  height: $headerIconsSize;
+  width: $headerIconsSize;
+  margin: $headerIconMargin, $headerIconMargin, $headerIconMargin, $headerIconMargin !important;
+}
+
+#headerC {
+  display: -webkit-flex; /* Safari */
+  -webkit-justify-content: space-between; /* Safari 6.1+ */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  text-decoration: none;
+}
+
+#headerC .inline {
+  padding-right: $headerPadding;
+}
+
+#headerC .logo {
+  text-decoration: none;
+  color: $textColor;
+  padding-left: $headerPadding;
+}
+
+.bodyClass {
+  background-color: $bgColor;
+}

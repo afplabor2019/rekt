@@ -1,0 +1,21 @@
+@import "variables";
+
+#top {
+  border-bottom: 1px solid $textColor;
+}
+
+.buttonC.teamsActive {
+  background-color: $textSecondaryColor !important;
+}
+
+#searchFill{
+  width: 100%;
+}
+
+#searchButtons{
+  margin-top: 15px !important;
+}
+
+.noAdd{
+  margin-top: 25px !important;
+}

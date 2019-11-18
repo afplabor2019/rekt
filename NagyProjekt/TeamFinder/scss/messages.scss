@@ -1,0 +1,57 @@
+@import "variables";
+
+#msgContacts {
+  border-right: 1px;
+  border-right-color: $textColor;
+  border-right-style: solid;
+  height: 100%;
+  width: 300px;
+  vertical-align: top;
+}
+
+.msgContactpanel {
+  background-color: white !important;
+  border: 1px solid $textColor !important;
+  margin-bottom: 5px !important;
+}
+
+.msgContactpanelA{
+  text-decoration: none !important;
+  color: $textColor !important;
+}
+
+.activeMsg {
+  background-color: #FB9F19;
+}
+
+#msgContactsTable {
+  height: 100%;
+  width: 100%;
+}
+
+.msgSend {
+  margin-top: 5px;
+  float: right !important;
+  width: 100px;
+}
+
+.msgInputText {
+  float: left !important;
+  width: 100%;
+}
+
+.msgRight {
+  text-align: right;
+}
+
+.msgLeft {
+  text-align: left;
+}
+
+.msgMSGTable {
+  width: 100%;
+}
+
+.msgMain{
+  margin-top: 15px;
+}

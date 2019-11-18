@@ -1,0 +1,18 @@
+{
+  "name": "TeamFinder",
+  "version": "1.0.0",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  },
+  "scripts": {
+    "dropDown": "node-sass scss/dropdownMenu.scss css/dropdownMenu.css",
+    "header": "node-sass scss/header.scss css/header.css",
+    "home": "node-sass scss/home.scss css/home.css",
+    "global": "node-sass scss/global.scss css/global.css",
+    "profile": "node-sass scss/profile.scss css/profile.css",
+    "messages": "node-sass scss/messages.scss css/messages.css",
+    "search": "node-sass scss/search.scss css/search.css",
+    "adItem": "node-sass scss/adItem.scss css/adItem.css",
+    "404": "node-sass scss/pnf.scss css/pnf.css"
+  }
+}

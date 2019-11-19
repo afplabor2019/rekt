@@ -1,6 +1,6 @@
 <?php
 
-define('DOMAIN', 'http://localhost/TeamFinder/');
+define('DOMAIN', 'http://127.0.0.1/TeamFinder/');
 define('BASE_PATH', __DIR__);
 
 define('DEBUG_MODE', true);

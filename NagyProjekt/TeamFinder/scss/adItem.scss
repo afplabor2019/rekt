@@ -10,10 +10,14 @@
   text-decoration: underline;
 }
 
-.searchGameIcon,
-.rankIcon {
+.searchGameIcon {
   height: 50px;
   width: 50px;
+}
+
+.rankIcon{
+  height: 100px;
+  width: 100px;
 }
 
 #searchRanksTD {

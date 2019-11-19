@@ -88,7 +88,7 @@ if (is_post()) {
                     </td>
                     <td>Maximum skill:</td>
                     <td>
-                        <select class="textInput" name="maxRank" id="maxRank">
+                        <select class="textInput" name="maxRank" id="maxRank" onchange="maxRankChanged()">
                             <?php
                             $fn = fopen("Resources\csgoRanks.txt", "r");
                             $i = 0;
@@ -260,3 +260,31 @@ if (is_post()) {
     }
     ?>
 </div>
+
+<script>
+    var perviousSelectedIndex = 0;
+
+    function maxRankChanged() {
+        var maxRank = document.getElementById("maxRank");
+        var minRank = document.getElementById("minRank");
+        var i;
+
+        if (perviousSelectedIndex > maxRank.selectedIndex) {
+            //https://www.w3schools.com/jsref/coll_select_options.asp
+            //create a tömb with all of the ranks and add them back
+            for (i = 0; i < maxRank.selectedIndex; i++) {
+
+            }
+        } else {
+            for (i = 0; i < maxRank.selectedIndex; i++) {
+                //console.log(minRank.options[0].value + " " + i);
+                if (minRank.options[0].value != maxRank.options[maxRank.selectedIndex].value) {
+                    minRank.options[0].remove();
+                } else {
+                    break;
+                }
+            }
+        }
+        perviousSelectedIndex = maxRank.selectedIndex;
+    }
+</script>

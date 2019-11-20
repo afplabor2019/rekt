@@ -17,7 +17,8 @@ $user = getUserById($db, $ad['advertiserID']);
                     <table>
                         <tr>
                             <td class="secondaryColor searchName"><?php
-                                                                    echo $user['name'];
+                                                                    echo $ad['teamName'] == '' || $ad['teamName'] == null ? $user['name'] : $ad['teamName'];
+                                                                    // echo $user['name'];
                                                                     ?></td>
                             <td>
                                 <?php

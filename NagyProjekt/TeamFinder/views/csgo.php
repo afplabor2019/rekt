@@ -67,7 +67,7 @@ if (is_post()) {
                                                                     ?>" type="submit" name="teams" value="Teams" /></td>
                 </tr>
                 <tr>
-                    <td>Minimum skill:</td>
+                    <td>Minimum rank:</td>
                     <td>
                         <select class="textInput" name="minRank" id="minRank">
                             <?php
@@ -86,7 +86,7 @@ if (is_post()) {
                             ?>
                         </select>
                     </td>
-                    <td>Maximum skill:</td>
+                    <td>Maximum rank:</td>
                     <td>
                         <select class="textInput" name="maxRank" id="maxRank" onchange="maxRankChanged()">
                             <?php
@@ -289,8 +289,7 @@ if (is_post()) {
     function maxRankChanged() {
         var maxRank = document.getElementById("maxRank");
         var minRank = document.getElementById("minRank");
-        var i;
-        console.log(perviousRankSelectedIndex + " " + maxRank.selectedIndex);
+        var i;        
 
         if (perviousRankSelectedIndex < maxRank.selectedIndex) {
             //add items
@@ -313,7 +312,6 @@ if (is_post()) {
         var maxAge = document.getElementById("maxAge");
         var minAge = document.getElementById("minAge");
         var i;
-        console.log(perviousAgeSelectedIndex + " " + maxAge.selectedIndex);
 
         if (perviousAgeSelectedIndex < maxAge.selectedIndex) {
             //add items

@@ -67,7 +67,7 @@ if (is_post()) {
                                                                     ?>" type="submit" name="teams" value="Teams" /></td>
                 </tr>
                 <tr>
-                    <td>Minimum skill:</td>
+                    <td>Minimum rank:</td>
                     <td>
                         <select class="textInput" name="minRank" id="minRank">
                             <?php
@@ -86,9 +86,9 @@ if (is_post()) {
                             ?>
                         </select>
                     </td>
-                    <td>Maximum skill:</td>
+                    <td>Maximum rank:</td>
                     <td>
-                        <select class="textInput" name="maxRank" id="maxRank">
+                        <select class="textInput" name="maxRank" id="maxRank" onchange="maxRankChanged()">
                             <?php
                             $fn = fopen("Resources\lolRanks.txt", "r");
                             $i = 0;
@@ -123,7 +123,7 @@ if (is_post()) {
                     </td>
                     <td>Maximum age:</td>
                     <td>
-                        <select class="textInput" name="maxAge" id="maxAge">
+                        <select class="textInput" name="maxAge" id="maxAge" onchange="maxAgeChanged()">
                             <?php
                             for ($i = 1; $i <= 100; $i++) {
                                 echo '<option value="' . $i . '" ';
@@ -260,3 +260,65 @@ if (is_post()) {
     }
     ?>
 </div>
+
+
+<script>
+    var ranks = [
+        "Iron",
+        "Bronze",
+        "Silver",
+        "Gold",
+        "Platinum",
+        "Diamond",
+        "Master",
+        "Grandmaster",
+        "Challenger"
+    ];
+
+    var perviousRankSelectedIndex = ranks.length;
+    var perviousAgeSelectedIndex = document.getElementById("maxAge").options.length;
+
+    function maxRankChanged() {
+        var maxRank = document.getElementById("maxRank");
+        var minRank = document.getElementById("minRank");
+        var i;
+
+        if (perviousRankSelectedIndex < maxRank.selectedIndex) {
+            //add items
+            //https://www.w3schools.com/jsref/coll_select_options.asp
+            for (i = minRank.options.length; i <= maxRank.selectedIndex; i++) {
+                var cRank = new Option(ranks[i], ranks[i]);
+                minRank.options.add(cRank, i);
+            }
+        } else {
+            //remove items
+            var length = minRank.options.length;
+            for (i = maxRank.selectedIndex + 1; i < length; i++) {
+                minRank.options[maxRank.selectedIndex + 1].remove();
+            }
+        }
+        perviousRankSelectedIndex = maxRank.selectedIndex;
+    }
+
+    function maxAgeChanged() {
+        var maxAge = document.getElementById("maxAge");
+        var minAge = document.getElementById("minAge");
+        var i;
+
+        if (perviousAgeSelectedIndex < maxAge.selectedIndex) {
+            //add items
+            //https://www.w3schools.com/jsref/coll_select_options.asp
+            for (i = minAge.options.length; i <= maxAge.selectedIndex; i++) {
+                var cAge = new Option(i + 1, i + 1);
+                minAge.options.add(cAge, i);
+            }
+        } else {
+            //remove items
+            var length = minAge.options.length;
+            for (i = maxAge.selectedIndex + 1; i < length; i++) {
+                minAge.options[maxAge.selectedIndex + 1].remove();
+            }
+        }
+        perviousAgeSelectedIndex = maxAge.selectedIndex;
+    }
+</script>

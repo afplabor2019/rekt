@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data;
 using MySql.Data.MySqlClient;
 
 
@@ -14,13 +9,13 @@ namespace TeamFinderInstaller
         static void Main(string[] args)
         {
 
-            string host = "localhost";
+            string host = "127.0.0.1";
             string userName = "root";
             string password = "";
             string installType = "";
             do
             {
-                Console.Write("Installation type (0 = default, 1 = costum): ");
+                Console.Write("Installation type (0 = default, 1 = custom): ");
                 installType = Console.ReadLine();
                 switch (installType)
                 {
@@ -60,7 +55,7 @@ namespace TeamFinderInstaller
                 conn.Open();
 
                 Console.WriteLine("Creating database");
-                string sql = "CREATE DATABASE IF NOT EXISTS `teamfinder`;";
+                string sql = "CREATE DATABASE IF NOT EXISTS `teamfinder` CHARACTER SET UTF8 COLLATE utf8_hungarian_ci;";
                 cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
 

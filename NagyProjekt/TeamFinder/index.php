@@ -74,7 +74,7 @@ $r6sRanksPics = array(
 $connection = mysqli_connect('localhost', 'root', '');
 if (!mysqli_select_db($connection, 'teamfinder')) {
     echo '<script>    
-      alert("Database not found please run the installer from Database_Installer\TeamFinderInstaller.exe  !");
+      alert("Database not found please run the installer from\nDatabase_Installer/TeamFinderInstaller.exe  !");
     </script>';
     die();
 }

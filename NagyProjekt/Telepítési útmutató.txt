@@ -1,0 +1,4 @@
+1) Töltse le (http://www.wampserver.com/en/#download-wrapper) és telepítse a Wamp Servert ()!
+2) A TeamFinder mappát másolja át a Wamp64 telepítési mappáján belül a www mappába!
+3) Futtassa a TeamFinder\Database_Installer\TeamFinderInstaller.exe -t!
+4) Nyissa meg a Team Finder -t!

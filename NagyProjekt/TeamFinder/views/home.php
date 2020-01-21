@@ -13,6 +13,9 @@
       <td>
         <div id="homeR6s" class="shadow-pop-r6s"><a id="homeR6sA" href="<?php echo route(['page' => 'r6s']); ?>">Rainbow Six Siege</a></div>
       </td>
+	  <td>
+        <div id="homeOW" class="shadow-pop-ow"><a id="homeOwA" href="<?php echo route(['page' => 'ow']); ?>">Overwatch</a></div>
+      </td>
     </tr>
     <table>
 </div>

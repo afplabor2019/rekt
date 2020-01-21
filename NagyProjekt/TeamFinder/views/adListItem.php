@@ -7,8 +7,8 @@ $url = route([
     'id' => $ad['id'],
 ]);
 $user = getUserById($db, $ad['advertiserID']);
-?>
 
+?>
 <div id="adItemWrapper">
     <div class="labelC adItemI searchMiddle">
         <table>
@@ -46,6 +46,12 @@ $user = getUserById($db, $ad['advertiserID']);
                                         echo '<img src="' . $r6sRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" title="' . $ranks[0] . '" class="rankIcon">';
                                         echo '-';
                                         echo '<img src="' . $r6sRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" title="' . $ranks[1] . '" class="rankIcon">';
+                                        break;
+									case 'ow':
+                                        debug_to_console(strval($owRanksPics[$ranks[0]]));
+                                        echo '<img src="' . $owRanksPics[$ranks[0]] . '" alt="' . $ranks[0] . '" title="' . $ranks[0] . '" class="rankIcon">';
+                                        echo '-';
+                                        echo '<img src="' . $owRanksPics[$ranks[1]] . '" alt="' . $ranks[1] . '" title="' . $ranks[1] . '" class="rankIcon">';
                                         break;
                                 }
                                 ?>

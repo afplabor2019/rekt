@@ -12,3 +12,7 @@
 
 .noAdd {
   margin-top: 25px !important; }
+
+#top table , .bottom table , .label table{
+	margin: auto;
+}

@@ -225,15 +225,12 @@ if (is_post()) {
                 <td>
                     <input type="checkbox" name="roles[]" value="Mid"> Mid
                 </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" name="roles[]" value="Jungler"> Jungler
-                    </td>
-                    <td>
-                        <input type="checkbox" name="roles[]" value="support"> Support
-                    </td>
-                </tr>
+				<td>
+					<input type="checkbox" name="roles[]" value="Jungler"> Jungler
+				</td>
+				<td>
+					<input type="checkbox" name="roles[]" value="support"> Support
+				</td>
             </table>
         </div>
         <div id="searchButtons">

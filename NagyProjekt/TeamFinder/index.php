@@ -13,6 +13,7 @@ $gameIcons = array(
     "csgo" => "Resources\csgoLogo.png",
     "lol" => "Resources\lolLogo.png",
     "r6s" => "Resources\lr6sLogo.png",
+	"ow" => "Resources\owLogo.png"
 );
 
 $csgoRanksPics = array(
@@ -37,6 +38,18 @@ $csgoRanksPics = array(
 );
 
 $lolRanksPics = array(
+    "Iron" => "ranks_pictures\bronze_1.png",
+    "Bronze" => "ranks_pictures\bronze_2.png",
+    "Silver" => "ranks_pictures\bronze_3.png",
+    "Gold" => "ranks_pictures\silver_1.png",
+    "Platinum" => "ranks_pictures\silver_2.png",
+    "Diamond" => "ranks_pictures\silver_3.png",
+    "Master" => "ranks_pictures\gold_1.png",
+    "Grandmaster" => "ranks_pictures\gold_2.png",
+    "Challenger" => "ranks_pictures\gold_3.png",
+);
+
+$owRanksPics = array(
     "Iron" => "ranks_pictures\bronze_1.png",
     "Bronze" => "ranks_pictures\bronze_2.png",
     "Silver" => "ranks_pictures\bronze_3.png",
